@@ -1,14 +1,16 @@
 package Models;
 
+import Interfaz.iABM;
+
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Admin extends Persona{
+public class Admin extends Persona implements iABM {
     public Admin() {
     }
 
-    public Admin(String nombre, String apellido, String username, String password, String email, char genero, int activo) {
+    public Admin(String nombre, String apellido, String username, String password, String email, char genero) {
         super(nombre, apellido, username, password, email, genero, 1);
     }
 
@@ -67,7 +69,13 @@ public class Admin extends Persona{
         return (uppercaseCount >= 1) && (numberCount >= 2);
     }
 
+    @Override
+    public void baja() {
 
+    }
 
+    @Override
+    public void modificacion() {
 
+    }
 }

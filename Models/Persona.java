@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 import static Models.Consola.sc;
 
-public class Persona implements iABM {
+public abstract class Persona{
 
     // agregue algunos parametros
     private static int cont = 0;
@@ -25,7 +25,6 @@ public class Persona implements iABM {
     public Persona() {
         cont++;
         this.id = cont;
-
     }
 
     public Persona(String nombre, String apellido, String username, String password, String email, char genero, int rol) {
@@ -36,6 +35,7 @@ public class Persona implements iABM {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.genero = genero;
         this.rol = rol;
         this.activo = 1;
     }
@@ -102,14 +102,16 @@ public class Persona implements iABM {
 
     @Override
     public String toString() {
-        return "Models.Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", rol=" + rol +
-                ", activo=" + activo +
+        return "Persona{" +
+                "\nid='"+id+'\''+
+                "\nnombre='" + nombre + '\'' +
+                ", \napellido='" + apellido + '\'' +
+                ", \nusername='" + username + '\'' +
+                ", \npassword='" + password + '\'' +
+                ", \nemail='" + email + '\'' +
+                ", \ngenero='" + genero +'\'' +
+                ", \nrol=" + rol +
+                ", \nactivo=" + activo +
                 '}';
     }
 
@@ -118,16 +120,18 @@ public class Persona implements iABM {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Persona persona = (Persona) o;
-        return Objects.equals(username, persona.username);
+        return Objects.equals(password, persona.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username);
+        return Objects.hash(password);
     }
 
 
-    //EL ALTA DE PERSONA NO TIENE QUE ESTAR ACA ME PARECE HABRIA QUE CHEQUEAR!!!
+
+
+    /*//EL ALTA DE PERSONA NO TIENE QUE ESTAR ACA ME PARECE HABRIA QUE CHEQUEAR!!!
     @Override
     public void alta() {
         nombre = Consola.leerString("Ingrese el Nombre: ");
@@ -202,7 +206,7 @@ public class Persona implements iABM {
     @Override
     public void modificacion() {
 
-    }
+    }*/
 
 
 }
