@@ -4,6 +4,7 @@ import Enums.Estilos;
 import Excepciones.Invalido;
 import Models.Persona;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +12,6 @@ import java.util.Map;
 
 public class TecBeer <T>{
 
-    //MEJOR TRABAJAR CON UN HASHMAP?
     private ArrayList<T> elementos;//ESTE ARRAYlist SERIA EL GENERAL DE TOOO Y A PARTIR DE ACA DERIVAR A HASHMAP O LO QUE SEA QUE QUERRAMOS TRABAJAR
     private Map<String, Persona> mapPersona;
 
@@ -39,7 +39,7 @@ public class TecBeer <T>{
         String lista = "No hay nada que mostrar";
         if(!elementos.isEmpty()){
             lista = "";
-            for(Object elemento:elementos){
+            for(Object elemento : elementos){
                 lista+=elemento.toString()+"\n";
             }
         }
@@ -71,37 +71,25 @@ public class TecBeer <T>{
         return aux;
     }
 
+    public void removeToMap(Persona persona) {mapPersona.remove(persona.getUsername());}
+
     public boolean verificarUsuario(String userName) {
         boolean existe = false;
-        boolean flag = false;
-        for(Map.Entry<String, Persona> entry:mapPersona.entrySet()){
-            try {
-                if(userName.equals(entry.getKey())){
-                    existe = true;
-                    break;
-                }else{
-                    throw new Invalido("El usuario no coincide con ningun cliente <!>");
-                }
-            }catch (Invalido e){
-                System.out.println(e.getMessage());
+        for(Map.Entry<String, Persona> entry : mapPersona.entrySet()){
+            if(userName.equals(entry.getKey())){
+                existe = true;
+                break;
             }
-
         }
         return existe;
     }
 
     public boolean verificarPassword(String password) {
         boolean existe = false;
-        for(Map.Entry<String, Persona> entry:mapPersona.entrySet()){
-            try{
-                if(password.equals(entry.getValue().getPassword())){
-                    existe = true;
-                    break;
-                }else{
-                    throw new Invalido("El password no coincide con ningun cliente <!>");
-                }
-            }catch (Invalido e){
-                System.out.println((e.getMessage()));
+        for(Map.Entry<String, Persona> entry : mapPersona.entrySet()){
+            if(password.equals(entry.getValue().getPassword())){
+                existe = true;
+                break;
             }
         }
         return existe;

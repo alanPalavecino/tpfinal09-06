@@ -19,6 +19,9 @@ public abstract class Persona{
     private String password;
     private String email;
     private char genero;
+
+
+
     private int rol;
     private int activo;
 
@@ -91,6 +94,9 @@ public abstract class Persona{
     public int getRol() {
         return rol;
     }
+    public void setRol(int rol) {
+        this.rol = rol;
+    }
     public char getGenero() {
         return genero;
     }
@@ -114,99 +120,4 @@ public abstract class Persona{
                 ", \nactivo=" + activo +
                 '}';
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Persona persona = (Persona) o;
-        return Objects.equals(password, persona.password);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(password);
-    }
-
-
-
-
-    /*//EL ALTA DE PERSONA NO TIENE QUE ESTAR ACA ME PARECE HABRIA QUE CHEQUEAR!!!
-    @Override
-    public void alta() {
-        nombre = Consola.leerString("Ingrese el Nombre: ");
-        //AGREGAR VALIDACION DE NOMBRE
-        Consola.limpiar();
-        apellido = Consola.leerString("Ingrese el Apellido: ");
-        //AGREGAR VALIDACION DE APELLIDO
-        Consola.limpiar();
-        username = Consola.leerString("Ingrese el Username: ");
-        //AGREGAR VALIDACION DE USERNAME (QUE NO HAYA OTRO IGUAL)
-        Consola.limpiar();
-        password = Consola.leerString("Ingrese Password: ");
-
-
-        //VALIDACION DE PASSWORD
-        while (!isValidPassword(password)) {
-            System.out.println("Contraseña inválida. Asegúrese de que su contraseña tenga al menos una mayúscula, dos números y no menos de ocho caracteres en total.");
-            password = Consola.leerString("Por favor ingrese una contraseña válida: ");
-        }
-        email = Consola.leerString("Ingrese el Email: ");
-
-
-        //VALIDACION DE MAIL
-        Pattern pattern = Pattern
-                .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
-        Matcher matcher = pattern.matcher(email);
-        while (!matcher.find()) {
-            email = Consola.leerString("Email inválido. Por favor vuelva a ingresarlo: ");
-
-            matcher = pattern.matcher(email);
-        }
-
-        //AL GENERO LO SAQUE PORQUE ME PARECIA AL PEDO
-
-        System.out.println("Ingrese el Género (M o F): ");
-        genero = sc.next().charAt(0);
-        while (genero != 'M' && genero != 'F') {
-            System.out.println("Género inválido. Por favor vuelva a ingresarlo: ");
-            genero = sc.next().charAt(0);
-        }
-
-        activo = 1;
-
-
-    }
-
-    private boolean isValidPassword(String password) {
-        int uppercaseCount = 0;
-        int numberCount = 0;
-
-        if (password.length() < 8) {
-            return false;
-        }
-
-        for (char c : password.toCharArray()) {
-            if (Character.isUpperCase(c)) {
-                uppercaseCount++;
-            } else if (Character.isDigit(c)) {
-                numberCount++;
-            }
-        }
-
-        return (uppercaseCount >= 1) && (numberCount >= 2);
-    }
-
-    @Override
-    public void baja() {
-
-    }
-
-    @Override
-    public void modificacion() {
-
-    }*/
-
-
 }

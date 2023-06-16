@@ -29,6 +29,6 @@ public class Pedido implements iABM {
     }
 
     public void alta(){};
-    public void baja(){};
-    public void modificacion(){};
+    public void baja(TecBeer sistema, Object objeto){};
+    public void modificacion(TecBeer sistema){};
 }

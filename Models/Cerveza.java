@@ -94,12 +94,12 @@ public class Cerveza implements iABM{
     }
 
     @Override
-    public void baja() {
+    public void baja(TecBeer sistema, Object objeto) {
 
     }
 
     @Override
-    public void modificacion() {
+    public void modificacion(TecBeer sistema) {
 
     }
 }

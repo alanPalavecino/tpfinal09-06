@@ -1,7 +1,10 @@
 package Models;
 
+import Excepciones.Invalido;
+import Excepciones.UsuarioPasswordInvalido;
 import Interfaz.iABM;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,36 +20,43 @@ public class Admin extends Persona implements iABM {
     @Override
     public void alta(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese el Nombre: ");
+        Consola.escribir("Ingrese el nombre: ");
         setNombre(sc.nextLine());
-        System.out.println("Ingrese el Apellido: ");
+        Consola.escribir("Ingrese el Apellido: ");
         setApellido(sc.nextLine());
-        System.out.println("Ingrese el Username: ");
+        Consola.escribir("Ingrese el Username: ");
         setUsername(sc.nextLine());
-        System.out.println("Ingrese el Password: ");
-        setPassword(sc.nextLine());
-        while (!isValidPassword(getPassword())) {
-            System.out.println("Contraseña inválida. Asegúrese de que su contraseña tenga al menos una mayúscula, dos números y no menos de ocho caracteres en total.");
-            System.out.println("Por favor ingrese una contraseña válida: ");
+        try{
+            Consola.escribir("Ingrese el Password: ");
+            setPassword(sc.nextLine());
+            if (!isValidPassword(getPassword())) {
+                throw new UsuarioPasswordInvalido("Contraseña inválida. Asegúrese de que su contraseña tenga al menos una mayúscula, dos números y no menos de ocho caracteres en total.");
+            }
+        }catch (Exception e){
+            Consola.escribir(e.getMessage());
+        }
+        while (!isValidPassword(getPassword())){
+            Consola.escribir("Por favor ingrese una contraseña válida: ");
             setPassword(sc.nextLine());
         }
-        System.out.println("Ingrese el Email: ");
+        Consola.escribir("Ingrese el Email: ");
         setEmail(sc.nextLine());
         Pattern pattern = Pattern
                 .compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                         + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
         Matcher matcher = pattern.matcher(getEmail());
         while (!matcher.find()) {
-            System.out.println("Email inválido. Por favor vuelva a ingresarlo: ");
+            Consola.escribir("Email inválido. Por favor vuelva a ingresarlo: ");
             setEmail(sc.nextLine());
             matcher = pattern.matcher(getEmail());
         }
-        System.out.println("Ingrese el Género (M o F): ");
-        setGenero(sc.next().charAt(0));
+        Consola.escribir("Ingrese el Género (M o F): ");
+        setGenero(sc.nextLine().charAt(0));
         while (getGenero() != 'M' && getGenero() != 'F'){
-            System.out.println("Género inválido. Por favor vuelva a ingresarlo: ");
-            setGenero(sc.next().charAt(0));
+            Consola.escribir("Género inválido. Por favor vuelva a ingresarlo: ");
+            setGenero(sc.nextLine().charAt(0));
         }
+        setRol(1);
         setActivo(1);
     }
 
@@ -70,12 +80,76 @@ public class Admin extends Persona implements iABM {
     }
 
     @Override
-    public void baja() {
-
+    public void baja(TecBeer sistema, Object objeto) {
+        sistema.removeToMap((Persona) objeto);
+        try {
+            if(!sistema.verificarUsuario(((Persona) objeto).getUsername())){
+                Consola.escribir("Ha sido dado de baja de Tecbeer.");
+            }else throw new Invalido("Error inesperado. No se pudo dar de baja del sistema.");
+        }catch (Exception e){
+            Consola.escribir(e.getMessage());
+        }
     }
 
     @Override
-    public void modificacion() {
+    public void modificacion(TecBeer sistema) {
+        Scanner sc = new Scanner(System.in);
+        int opcion = 0;
+        do {
+            Consola.escribir("Qué desea modificar?");
+            Consola.escribir("1- Nombre ");
+            Consola.escribir("2- Apellido ");
+            Consola.escribir("3- Username ");
+            Consola.escribir("4- Password ");
+            Consola.escribir("5- Email ");
+            try {
+                opcion = Consola.leerInt("Ingrese la opción que desea modificar: ");
+            } catch (InputMismatchException e) {
+                Consola.escribir("Opción inválida. Debe ingresar solamente números");
+            }
+        } while (opcion < 1 || opcion > 5);
 
+        switch (opcion) {
+            case 1:
+                Consola.escribir("Ingrese el nuevo Nombre: ");
+                setNombre(sc.nextLine());
+                break;
+            case 2:
+                Consola.escribir("Ingrese el nuevo Apellido: ");
+                setApellido(sc.nextLine());
+                break;
+            case 3:
+                Consola.escribir("Ingrese el nuevo Username: ");
+                String username = sc.nextLine();
+                while (sistema.verificarUsuario(username)) {
+                    Consola.escribir("El Username ingresado ya existe, por favor ingrese otro: ");
+                    username = sc.nextLine();
+                }
+                setUsername(username);
+                break;
+            case 4:
+                Consola.escribir("Ingrese el nuevo Password: ");
+                setPassword(sc.nextLine());
+                while (!isValidPassword(getPassword())) {
+                    Consola.escribir("Contraseña inválida. Asegúrese de que su contraseña tenga al menos una mayúscula, dos números y no menos de ocho caracteres en total.");
+                    Consola.escribir("Por favor ingrese una contraseña válida: ");
+                    setPassword(sc.nextLine());
+                }
+                break;
+            case 5:
+                Consola.escribir("Ingrese el nuevo Email: ");
+                setEmail(sc.nextLine());
+                Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+                Matcher matcher = pattern.matcher(getEmail());
+                while (!matcher.find()) {
+                    Consola.escribir("Email inválido. Por favor vuelva a ingresarlo: ");
+                    setEmail(sc.nextLine());
+                    matcher = pattern.matcher(getEmail());
+                }
+                break;
+            default:
+                break;
+        }
     }
 }
