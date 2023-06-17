@@ -1,27 +1,42 @@
 package Models;
 
+import Enums.Estilos;
+import Enums.Tipo;
 import Interfaz.iABM;
 
-public class Cerveza implements iABM {
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
+public class Cerveza implements iABM{
 
+    private static int cont = 0;
     private int id;
     private String nombre;
-    private String estilo;
+
+    private Estilos estilo;
     private String marca;
-    private double precio;
-    private int stock;
+
+    private Tipo tipo;
+//    private double precio;
+    private Integer stock;
+
+    private int activo;
 
     public Cerveza() {
+        cont++;
+        this.id = cont;
     }
 
-    public Cerveza(int id, String nombre, String estilo, String marca, double precio, int stock) {
-        this.id = id;
+    public Cerveza(String nombre, Estilos estilo, String marca, Tipo tipo, Integer stock) {
+        cont++;
+        this.id = cont;
         this.nombre = nombre;
         this.estilo = estilo;
         this.marca = marca;
-        this.precio = precio;
+        this.tipo = tipo;
+//        this.precio = tipo.getPrecio();
         this.stock = stock;
+        this.activo = 1;
     }
 
     public String getNombre() {
@@ -33,13 +48,12 @@ public class Cerveza implements iABM {
     }
 
     public String getEstilo() {
-        return estilo;
+        return estilo.name();
     }
 
-    public void setEstilo(String estilo) {
+    public void setEstilo(Estilos estilo) {
         this.estilo = estilo;
     }
-
     public String getMarca() {
         return marca;
     }
@@ -48,30 +62,121 @@ public class Cerveza implements iABM {
         this.marca = marca;
     }
 
-    public double getPrecio() {
-        return precio;
+    public String getTipo() {
+        return tipo.name();
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
     }
 
-    public int getStock() {
+//    public double getPrecio() {
+//        return precio;
+//    }
+//
+//    public void setPrecio(double precio) {
+//        this.precio = precio;
+//    }
+
+    public Integer getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
+    public void setStock(Integer stock) {
         this.stock = stock;
     }
+
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    @Override
+    public String toString() {
+        return "Cerveza{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", estilo=" + estilo +
+                ", marca='" + marca + '\'' +
+                ", tipo=" + tipo +
+//                ", precio=" + precio +
+                ", stock=" + stock +
+                '}';
     }
 
-    public void alta(){};
-    public void baja(){};
-    public void modificacion(){};
+    @Override
+    public void alta() {
+        Scanner sc = new Scanner(System.in);
+        Consola.escribir("Ingrese el Nombre del producto: ");
+        setNombre(sc.nextLine());
+
+        Consola.escribir("Seleccione el Estilo: ");
+        int opcionEstilo = 1;
+        for(Estilos estilo : Estilos.values()){
+            Consola.escribir(opcionEstilo + ". " + estilo);
+            opcionEstilo++;
+        }
+        int estiloElegido;
+        try{
+            estiloElegido = sc.nextInt();
+            sc.nextLine();
+            while (estiloElegido < 1 || estiloElegido > Estilos.values().length){
+                Consola.escribir("Opción inválida, por favor ingrese la opción nuevamente: ");
+                estiloElegido = sc.nextInt();
+                sc.nextLine();
+            }
+            Estilos estilo = Estilos.obtenerEstilo(estiloElegido);
+            setEstilo(estilo);
+        }catch (InputMismatchException e){
+            Consola.escribir("Por favor ingrese solamente numeros: ");
+            estiloElegido = sc.nextInt();
+            sc.nextLine();
+            Estilos estilo = Estilos.obtenerEstilo(estiloElegido);
+            setEstilo(estilo);
+        }
+        Consola.escribir("Ingrese la Marca del producto: ");
+        setMarca(sc.nextLine());
+
+        Consola.escribir("Seleccione el Tipo de producto: ");
+        int opcionTipo = 1;
+        for(Tipo tipo : Tipo.values()){
+            Consola.escribir(opcionTipo + ". " + tipo);
+            opcionTipo++;
+        }
+        int tipoElegido;
+        try{
+            tipoElegido = sc.nextInt();
+            while (tipoElegido < 1 || tipoElegido > Tipo.values().length){
+                Consola.escribir("Opción inválida, por favor ingrese la opción nuevamente: ");
+                tipoElegido = sc.nextInt();
+            }
+            Tipo tipo = Tipo.obtenerTipo(tipoElegido);
+            setTipo(tipo);
+        }catch (InputMismatchException e){
+            Consola.escribir("Por favor ingrese solamente numeros: ");
+            tipoElegido = sc.nextInt();
+            Tipo tipo = Tipo.obtenerTipo(tipoElegido);
+            setTipo(tipo);
+        }
+
+        try {
+            Consola.escribir("Ingrese el Stock disponible: ");
+            setStock(sc.nextInt());
+            sc.nextLine();
+        }catch (InputMismatchException e){
+            Consola.escribir("Error. Debe ingresar el stock en números enteros.");
+            Consola.escribir("Ingrese el Stock disponible: ");
+            setStock(sc.nextInt());
+        }
+        activo = 1;
+    }
+
+    @Override
+    public void baja(TecBeer sistema, Object objeto) {
+
+    }
+
+    @Override
+    public void modificacion(TecBeer sistema) {
+
+    }
 }
