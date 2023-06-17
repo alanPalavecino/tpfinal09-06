@@ -81,8 +81,8 @@ public class Admin extends Persona implements iABM {
 
     @Override
     public void baja(TecBeer sistema, Object objeto) {
-        sistema.removeToMap((Persona) objeto);
         try {
+            sistema.removeToMapPersona((Persona) objeto);
             if(!sistema.verificarUsuario(((Persona) objeto).getUsername())){
                 Consola.escribir("Ha sido dado de baja de Tecbeer.");
             }else throw new Invalido("Error inesperado. No se pudo dar de baja del sistema.");

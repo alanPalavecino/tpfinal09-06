@@ -14,10 +14,12 @@ public class TecBeer <T>{
 
     private ArrayList<T> elementos;//ESTE ARRAYlist SERIA EL GENERAL DE TOOO Y A PARTIR DE ACA DERIVAR A HASHMAP O LO QUE SEA QUE QUERRAMOS TRABAJAR
     private Map<String, Persona> mapPersona;
+    private Map<String, ArrayList<Cerveza>> mapCerveza;
 
     public TecBeer() {
         this.elementos = new ArrayList<>();
         this.mapPersona = new HashMap<>();
+        this.mapCerveza = new HashMap<>();
     }
 
     //region LISTA GENERICA METODS
@@ -48,7 +50,7 @@ public class TecBeer <T>{
 
     //endregion
 
-    public void addToMap(Persona nuevaPersona){
+    public void addToMapPersona(Persona nuevaPersona){
         mapPersona.put(nuevaPersona.getUsername(), nuevaPersona);
     }
 
@@ -57,12 +59,10 @@ public class TecBeer <T>{
         for(Map.Entry<String, Persona> entry:mapPersona.entrySet()){
             if(entry.getValue() instanceof Admin){
                 if(entry.getValue().getUsername().equals(username)){
-                    System.out.println("ENTRE EN ADMIN");
                     aux = entry.getValue();
                 }
             }else if(entry.getValue() instanceof Cliente){
                 if(entry.getValue().getUsername().equals(username)){
-                    System.out.println("ENTRE EN CLIENTE");
                     aux = entry.getValue();
                 }
             }
@@ -71,7 +71,7 @@ public class TecBeer <T>{
         return aux;
     }
 
-    public void removeToMap(Persona persona) {mapPersona.remove(persona.getUsername());}
+    public void removeToMapPersona(Persona persona) {mapPersona.remove(persona.getUsername());}
 
     public boolean verificarUsuario(String userName) {
         boolean existe = false;
@@ -93,5 +93,43 @@ public class TecBeer <T>{
             }
         }
         return existe;
+    }
+
+    public void verTodosLosClientes(){
+        for(Map.Entry<String, Persona> entry : mapPersona.entrySet()){
+            if(entry.getValue() instanceof Cliente){
+                Consola.escribir(entry.getValue().toString());
+                Consola.escribir("--------------------------------------------------------------");
+            }
+
+        }
+    }
+
+    public void arrayListToMapCerveza(){
+        for(Object objeto : elementos){
+            if(objeto instanceof Cerveza){
+                Cerveza cerveza = (Cerveza) objeto;
+                String estilo = cerveza.getEstilo();
+
+                if(!mapCerveza.containsKey(estilo)){
+                    mapCerveza.put(estilo, new ArrayList<>());
+                }else {
+                    mapCerveza.get(estilo).add(cerveza);
+                }
+            }
+        }
+    }
+
+    public void addToMapCerveza(Cerveza nuevaCerveza){mapCerveza.get(nuevaCerveza.getEstilo()).add(nuevaCerveza);}
+
+    public void verTodosLosProductos(){
+        for(String estilo : mapCerveza.keySet()){
+            Consola.escribir("Listado de Cervezas estilo " + estilo);
+            ArrayList<Cerveza> cervezas = mapCerveza.get(estilo);
+            for(Cerveza cerveza : cervezas){
+                Consola.escribir(cerveza.toString());
+            }
+            Consola.escribir("--------------------------------------------------------------");
+        }
     }
 }

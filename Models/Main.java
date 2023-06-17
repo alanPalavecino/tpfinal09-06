@@ -21,8 +21,8 @@ public class Main {
         sistema.addElementoToArrayList(adminPrueba);
         sistema.addElementoToArrayList(clientePrueba);
 
-        sistema.addToMap(adminPrueba);
-        sistema.addToMap(clientePrueba);
+        sistema.addToMapPersona(adminPrueba);
+        sistema.addToMapPersona(clientePrueba);
 
         //region PRODUCTOS HARDCODEADOS Y AGREGADOS A LISTA GENERICA
 
@@ -271,8 +271,6 @@ public class Main {
 
 
         //endregion
-
-
 
 
 //        System.out.println(sistema.listarElementos());

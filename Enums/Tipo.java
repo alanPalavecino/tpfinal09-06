@@ -18,4 +18,9 @@ public enum Tipo {
     public double getPrecio() {
         return precio;
     }
+
+    public static Tipo obtenerTipo(int opcion) {
+        Tipo[] tipos = Tipo.values();
+        return tipos[opcion - 1];
+    }
 }

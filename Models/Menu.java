@@ -5,6 +5,7 @@ import Excepciones.OpcionNoValida;
 import Excepciones.UsuarioPasswordInvalido;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Menu {
     //region MENU GENERAL
@@ -83,9 +84,14 @@ public class Menu {
                     System.out.println("-----MENU ADMIN-----");
                     subMenuAdmin(sistema);
                 }
-            }else throw new UsuarioPasswordInvalido("Usuario o password incorrecto.");
+            }else {
+                throw new UsuarioPasswordInvalido("Usuario o password incorrecto.");
+            }
         }catch (Exception e){
             Consola.escribir(e.getMessage());
+            Consola.escribir("Presione cualquier tecla para continuar");
+            Scanner scanner = new Scanner(System.in);
+            scanner.nextLine();
         }
     }
 
@@ -93,8 +99,11 @@ public class Menu {
 
         Cliente cliente = new Cliente();
         cliente.alta();
-        sistema.addToMap(cliente);
+        sistema.addToMapPersona(cliente);
         Consola.escribir("Usted se ha registrado exitosamente en TecBeer.");
+        Consola.escribir("Presione cualquier tecla para continuar");
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
     }
 
     //endregion
@@ -146,7 +155,7 @@ public class Menu {
                     adminPedido();
                     break;
                 case 3:
-                    adminProducto();
+                    adminProducto(sistema);
                     break;
                 case 4:
                     break;
@@ -163,6 +172,7 @@ public class Menu {
 
     //region USUARIO - CLIENTE
     public static void usuarioCliente(TecBeer sistema, Cliente cliente){
+        Scanner sc = new Scanner(System.in);
         int opcion = -1;
         do{
             do{
@@ -176,12 +186,19 @@ public class Menu {
             switch (opcion){
                 case 1:
                     Consola.escribir(sistema.devolverPersonaPorUserName(cliente.getUsername()).toString());
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 2:
                     cliente.baja(sistema, cliente);
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 3:
                     cliente.modificacion(sistema);
+                    Consola.escribir("Se ha modificado exitosamente en el sistema.");
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 0:
                     break;
@@ -221,6 +238,8 @@ public class Menu {
 
     //region ADMIN - CLIENTE
     public static void adminCliente(TecBeer sistema){
+        Scanner sc = new Scanner(System.in);
+        String username;
         int opcion = -1;
         do{
             do{
@@ -237,14 +256,54 @@ public class Menu {
 
             switch (opcion){
                 case 1:
+                    Consola.escribir("Ingrese el Username a buscar: ");
+                    username = sc.nextLine();
+                    try{
+                        if(sistema.devolverPersonaPorUserName(username) != null && sistema.devolverPersonaPorUserName(username) instanceof Cliente){
+                            Consola.escribir("El Username ingresado pertenece al siguiente cliente: ");
+                            Consola.escribir(sistema.devolverPersonaPorUserName(username).toString());
+                            Consola.escribir("Presione cualquier tecla para continuar");
+                            sc.nextLine();
+                        }
+                        else throw new Invalido("El Username ingresado no pertenece a un cliente válido.");
+                    }catch (Exception e){
+                        Consola.escribir(e.getMessage());
+                    }
                     break;
                 case 2:
+                    sistema.verTodosLosClientes();
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 3:
+                    Cliente cliente = new Cliente();
+                    cliente.alta();
+                    sistema.addToMapPersona(cliente);
+                    Consola.escribir("El nuevo cliente se ha agregado exitosamente a Tecbeer.");
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 4:
+                    Admin admin = new Admin();
+                    admin.alta();
+                    sistema.addToMapPersona(admin);
+                    Consola.escribir("El nuevo admin se ha agregado exitosamente a Tecbeer.");
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 5:
+                    Consola.escribir("Ingrese el Username del cliente que desea dar de baja: ");
+                    username = sc.nextLine();
+                    try{
+                        if(sistema.devolverPersonaPorUserName(username) != null && sistema.devolverPersonaPorUserName(username) instanceof Cliente){
+                            sistema.removeToMapPersona(sistema.devolverPersonaPorUserName(username));
+                            Consola.escribir("El cliente ingresado ha sido dado de baja de Tecbeer.");
+                            Consola.escribir("Presione cualquier tecla para continuar");
+                            sc.nextLine();
+                        }else throw new Invalido("El Username ingresado no pertenece a un cliente válido.");
+                    }catch (Exception e){
+                        Consola.escribir(e.getMessage());
+                    }
                     break;
                 case 6:
                     break;
@@ -284,7 +343,9 @@ public class Menu {
     //endregion
 
     //region ADMIN - PRODUCTO
-    public static void adminProducto(){
+    public static void adminProducto(TecBeer sistema){
+        sistema.arrayListToMapCerveza();
+        Scanner sc = new Scanner(System.in);
         int opcion = -1;
         do{
             do{
@@ -300,6 +361,12 @@ public class Menu {
 
             switch (opcion){
                 case 1:
+                    Cerveza cerveza = new Cerveza();
+                    cerveza.alta();
+                    sistema.addToMapCerveza(cerveza);
+                    Consola.escribir("El nuevo Producto se ha agregado exitosamente a Tecbeer.");
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 2:
                     break;
@@ -310,6 +377,9 @@ public class Menu {
                 case 5:
                     break;
                 case 6:
+                    sistema.verTodosLosProductos();
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 0:
                     break;
