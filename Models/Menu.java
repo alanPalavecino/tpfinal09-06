@@ -1,5 +1,6 @@
 package Models;
 
+import Enums.Estilos;
 import Excepciones.Invalido;
 import Excepciones.OpcionNoValida;
 import Excepciones.UsuarioPasswordInvalido;
@@ -10,16 +11,10 @@ import java.util.Scanner;
 public class Menu {
     //region MENU GENERAL
     public static void menuGeneral(TecBeer sistema) {
-        /**IMPORTANTE*//*en la seccion de productos*/
-        //HAY QUE TRAER TODOS LOS PRODUCTOS QUE SE PUEDEN GUARDAR EN UN TREEMAP
-        //VER SI TENEMOS QUE HACER DEVUELTA EL BALANCEADO BINARIO PARA QUE SEA MAS RAPIDA LA BUSQUEDA
 
 
         /**IMPORTANTE*/
         //HAY QUE TRAER TODOS LOS CLIENTES DESDE ARCHIVOS CON SUS PEDIDOS Y LOS PRODUCTOS DEL PEDIDO
-
-
-
 
         int opcion = -1;
         do{
@@ -98,7 +93,7 @@ public class Menu {
     public static void registrarse(TecBeer sistema){
 
         Cliente cliente = new Cliente();
-        cliente.alta();
+        cliente.alta(sistema);
         sistema.addToMapPersona(cliente);
         Consola.escribir("Usted se ha registrado exitosamente en TecBeer.");
         Consola.escribir("Presione cualquier tecla para continuar");
@@ -268,16 +263,19 @@ public class Menu {
                         else throw new Invalido("El Username ingresado no pertenece a un cliente válido.");
                     }catch (Exception e){
                         Consola.escribir(e.getMessage());
+                        Consola.escribir("Presione cualquier tecla para continuar");
+                        sc.nextLine();
                     }
                     break;
                 case 2:
                     sistema.verTodosLosClientes();
                     Consola.escribir("Presione cualquier tecla para continuar");
                     sc.nextLine();
+                    sc.nextLine();
                     break;
                 case 3:
                     Cliente cliente = new Cliente();
-                    cliente.alta();
+                    cliente.alta(sistema);
                     sistema.addToMapPersona(cliente);
                     Consola.escribir("El nuevo cliente se ha agregado exitosamente a Tecbeer.");
                     Consola.escribir("Presione cualquier tecla para continuar");
@@ -285,7 +283,7 @@ public class Menu {
                     break;
                 case 4:
                     Admin admin = new Admin();
-                    admin.alta();
+                    admin.alta(sistema);
                     sistema.addToMapPersona(admin);
                     Consola.escribir("El nuevo admin se ha agregado exitosamente a Tecbeer.");
                     Consola.escribir("Presione cualquier tecla para continuar");
@@ -306,8 +304,24 @@ public class Menu {
                     }
                     break;
                 case 6:
+                    //ACA TENEMOS QUE VER SI HACEMOS DOS HASHMAP APARTE, UNO PARA CLIENTES ACTIVOS Y OTRO PARA INACTIVOS.
+                    //O SI TRABAJAMOS DIRECTAMENTE CON DOS ARCHIVOS DE CLIENTES ACTIVOS Y OTRO DE INACTIVOS.
                     break;
                 case 7:
+                    Consola.escribir("Ingrese el Username del cliente que desea modificar: ");
+                    username = sc.nextLine();
+                    try{
+                        if(sistema.devolverPersonaPorUserName(username) != null && sistema.devolverPersonaPorUserName(username) instanceof Cliente){
+                            ((Cliente) sistema.devolverPersonaPorUserName(username)).modificacion(sistema);
+                            Consola.escribir("El cliente ingresado ha sido modificado exitosamente.");
+                            Consola.escribir("Presione cualquier tecla para continuar");
+                            sc.nextLine();
+                        }else throw new Invalido("El Username ingresado no pertenece a un cliente válido.");
+                    }catch (Exception e){
+                        Consola.escribir(e.getMessage());
+                        Consola.escribir("Presione cualquier tecla para continuar");
+                        sc.nextLine();
+                    }
                     break;
                 case 0:
                     break;
@@ -355,14 +369,15 @@ public class Menu {
                 Consola.escribir("4.Eliminar");
                 Consola.escribir("5.Activar producto");
                 Consola.escribir("6.Ver todos los productos");
+                Consola.escribir("7.Ver productos por Estilo");
                 Consola.escribir("0.Salir");
                 opcion=Consola.leerInt("Seleccione una opcion <!>");
-            }while(opcion<0||opcion>6);
+            }while(opcion<0||opcion>7);
 
             switch (opcion){
                 case 1:
                     Cerveza cerveza = new Cerveza();
-                    cerveza.alta();
+                    cerveza.alta(sistema);
                     sistema.addToMapCerveza(cerveza);
                     Consola.escribir("El nuevo Producto se ha agregado exitosamente a Tecbeer.");
                     Consola.escribir("Presione cualquier tecla para continuar");
@@ -371,6 +386,22 @@ public class Menu {
                 case 2:
                     break;
                 case 3:
+                    Consola.escribir("Ingrese el ID del producto que desea modificar: ");
+                    int idIngresado = sc.nextInt();
+                    try{
+                        if(sistema.devolverProductoPorId(idIngresado) != null){
+                            Consola.escribir("El ID ingresado pertenece al siguiente producto: ");
+                            Consola.escribir(sistema.devolverProductoPorId(idIngresado).toString());
+                            sistema.devolverProductoPorId(idIngresado).modificacion(sistema);
+                            Consola.escribir("El producto ha sido modificado exitosamente.");
+                            Consola.escribir("Presione cualquier tecla para continuar");
+                            sc.nextLine();
+                        }else throw new Invalido("El ID ingresado no pertenece a un producto válido.");
+                    }catch (Exception e){
+                        Consola.escribir(e.getMessage());
+                        Consola.escribir("Presione cualquier tecla para continuar");
+                        sc.nextLine();
+                    }
                     break;
                 case 4:
                     break;
@@ -381,35 +412,20 @@ public class Menu {
                     Consola.escribir("Presione cualquier tecla para continuar");
                     sc.nextLine();
                     break;
-                case 0:
-                    break;
-            }
-        }while(opcion!=0);
-    }
-    //endregion
-
-    //region PRODUCTOS POR ESTILO
-    public static void verProductoPorEstiloMenu(){
-        int opcion = -1;
-        do{
-            do{
-                Consola.escribir("1.Rubia");
-                Consola.escribir("2.Roja");
-                Consola.escribir("3.Lupulada");
-                Consola.escribir("4.Negra");
-                Consola.escribir("0.Salir");
-                opcion=Consola.leerInt("Seleccione una opcion <!>");
-            }while(opcion<0||opcion>4);
-
-            switch (opcion){
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
+                case 7:
+                    Consola.escribir("Ingrese el Estilo de cerveza: ");
+                    String estiloIngresado = sc.nextLine().toUpperCase();
+                    sc.nextLine();
+                    try {
+                        Estilos estilos = Estilos.valueOf(estiloIngresado);
+                        sistema.verPorEstilo(estiloIngresado);
+                        Consola.escribir("Presione cualquier tecla para continuar");
+                        sc.nextLine();
+                    }catch (IllegalArgumentException e){
+                        Consola.escribir("No existen productos con el Estilo ingresado.");
+                        Consola.escribir("Presione cualquier tecla para continuar");
+                        sc.nextLine();
+                    }
                 case 0:
                     break;
             }

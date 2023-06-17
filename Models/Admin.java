@@ -18,14 +18,19 @@ public class Admin extends Persona implements iABM {
     }
 
     @Override
-    public void alta(){
+    public void alta(TecBeer sistema){
         Scanner sc = new Scanner(System.in);
         Consola.escribir("Ingrese el nombre: ");
         setNombre(sc.nextLine());
         Consola.escribir("Ingrese el Apellido: ");
         setApellido(sc.nextLine());
         Consola.escribir("Ingrese el Username: ");
-        setUsername(sc.nextLine());
+        String username = sc.nextLine();
+        while (sistema.verificarUsuario(username)){
+            Consola.escribir("El Username ingresado ya existe, por favor ingrese otro: ");
+            username = sc.nextLine();
+        }
+        setUsername(username);
         try{
             Consola.escribir("Ingrese el Password: ");
             setPassword(sc.nextLine());
