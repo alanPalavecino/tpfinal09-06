@@ -132,4 +132,30 @@ public class TecBeer <T>{
             Consola.escribir("--------------------------------------------------------------");
         }
     }
+
+    public Cerveza devolverProductoPorId(int id){
+        Cerveza aux = null;
+        for(String estilo : mapCerveza.keySet()){
+            ArrayList<Cerveza> cervezas = mapCerveza.get(estilo);
+            for(Cerveza cerveza : cervezas){
+                if(cerveza.getId() == id){
+                    aux = cerveza;
+                }
+            }
+        }
+        return aux;
+    }
+
+    public void verPorEstilo (String estilo){
+
+        for(Map.Entry<String, ArrayList<Cerveza>> entry : mapCerveza.entrySet()){
+            if(entry.getKey().equals(estilo)){
+                ArrayList<Cerveza> cervezas = entry.getValue();
+                for(Cerveza cerveza : cervezas){
+                    Consola.escribir(cerveza.toString());
+                }
+                break;
+            }
+        }
+    }
 }

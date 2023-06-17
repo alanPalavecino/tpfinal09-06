@@ -104,7 +104,7 @@ public class Cerveza implements iABM{
     }
 
     @Override
-    public void alta() {
+    public void alta(TecBeer sistema) {
         Scanner sc = new Scanner(System.in);
         Consola.escribir("Ingrese el Nombre del producto: ");
         setNombre(sc.nextLine());
@@ -134,7 +134,9 @@ public class Cerveza implements iABM{
             setEstilo(estilo);
         }
         Consola.escribir("Ingrese la Marca del producto: ");
-        setMarca(sc.nextLine());
+        sc.nextLine();
+        String marca = sc.nextLine();
+        setMarca(marca);
 
         Consola.escribir("Seleccione el Tipo de producto: ");
         int opcionTipo = 1;
@@ -177,6 +179,101 @@ public class Cerveza implements iABM{
 
     @Override
     public void modificacion(TecBeer sistema) {
+        Scanner sc  = new Scanner(System.in);
+        int opcion = 0;
+
+        do{
+
+            Consola.escribir("¿Qué desea modificar?");
+            Consola.escribir("1- Nombre ");
+            Consola.escribir("2- Estilo ");
+            Consola.escribir("3- Marca ");
+            Consola.escribir("4- Tipo ");
+            Consola.escribir("5- Stock ");
+            Consola.escribir("0-Salir ");
+
+            opcion = sc.nextInt();
+
+
+        } while (opcion < 0 || opcion > 5);
+
+        switch (opcion){
+            case 1:
+                Consola.escribir("Ingrese el nuevo nombre");
+                setNombre(sc.nextLine());
+                break;
+            case 2:
+                Consola.escribir("Seleccione el Estilo: ");
+                int opcionEstilo = 1;
+                for(Estilos estilo : Estilos.values()){
+                    Consola.escribir(opcionEstilo + ". " + estilo);
+                    opcionEstilo++;
+                }
+                int estiloElegido;
+                try{
+                    estiloElegido = sc.nextInt();
+                    sc.nextLine();
+                    while (estiloElegido < 1 || estiloElegido > Estilos.values().length){
+                        Consola.escribir("Opción inválida, por favor ingrese la opción nuevamente: ");
+                        estiloElegido = sc.nextInt();
+                        sc.nextLine();
+                    }
+                    Estilos estilo = Estilos.obtenerEstilo(estiloElegido);
+                    setEstilo(estilo);
+                }catch (InputMismatchException e){
+                    Consola.escribir("Por favor ingrese solamente numeros: ");
+                    estiloElegido = sc.nextInt();
+                    sc.nextLine();
+                    Estilos estilo = Estilos.obtenerEstilo(estiloElegido);
+                    setEstilo(estilo);
+                }
+                break;
+            case 3:
+                Consola.escribir("Ingrese la Marca del producto: ");
+                sc.nextLine();
+                String marca = sc.nextLine();
+                setMarca(marca);
+                break;
+            case 4:
+                Consola.escribir("Seleccione el Tipo de producto: ");
+                int opcionTipo = 1;
+                for(Tipo tipo : Tipo.values()){
+                    Consola.escribir(opcionTipo + ". " + tipo);
+                    opcionTipo++;
+                }
+                int tipoElegido;
+                try{
+                    tipoElegido = sc.nextInt();
+                    while (tipoElegido < 1 || tipoElegido > Tipo.values().length){
+                        Consola.escribir("Opción inválida, por favor ingrese la opción nuevamente: ");
+                        tipoElegido = sc.nextInt();
+                    }
+                    Tipo tipo = Tipo.obtenerTipo(tipoElegido);
+                    setTipo(tipo);
+                }catch (InputMismatchException e){
+                    Consola.escribir("Por favor ingrese solamente numeros: ");
+                    tipoElegido = sc.nextInt();
+                    Tipo tipo = Tipo.obtenerTipo(tipoElegido);
+                    setTipo(tipo);
+                }
+                break;
+            case 5:
+                try {
+                    Consola.escribir("Ingrese el Stock disponible: ");
+                    setStock(sc.nextInt());
+                    sc.nextLine();
+                }catch (InputMismatchException e){
+                    Consola.escribir("Error. Debe ingresar el stock en números enteros.");
+                    Consola.escribir("Ingrese el Stock disponible: ");
+                    setStock(sc.nextInt());
+                }
+                break;
+            case 0:
+                break;
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + opcion);
+        }
 
     }
 }

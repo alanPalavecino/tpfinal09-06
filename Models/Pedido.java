@@ -28,7 +28,7 @@ public class Pedido implements iABM {
         this.cervezas = new ArrayList<>();
     }
 
-    public void alta(){};
+    public void alta(TecBeer sistema){};
     public void baja(TecBeer sistema, Object objeto){};
     public void modificacion(TecBeer sistema){};
 }
