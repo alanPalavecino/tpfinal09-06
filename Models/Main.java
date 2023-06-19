@@ -18,13 +18,35 @@ public class Main {
 
 
         TecBeer sistema = new TecBeer();
-        Admin adminPrueba = new Admin("Octavio", "Lopez", "Oti", "Lopez1503", "lopezortizoctavio@gmail.com", 'M');
-        Cliente clientePrueba = new Cliente("Pedro", "Perez", "pepe", "pepe123", "pepe@gmail.com", 'M');
-        sistema.addElementoToArrayList(adminPrueba);
-        sistema.addElementoToArrayList(clientePrueba);
 
-        sistema.addToMapPersona(adminPrueba);
-        sistema.addToMapPersona(clientePrueba);
+        //region ADMIN Y CLIENTES HARDCODEADOS Y AGREAGADOS A LA LISTA GENERICA
+
+        Admin adminPrueba = new Admin("Octavio", "Lopez", "Oti", "Lopez1503", "lopezortizoctavio@gmail.com", 'M');
+        Cliente cliente0 = new Cliente("Pedro", "Perez", "pepe", "pepe123", "pepe@gmail.com", 'M');
+        Cliente cliente1 = new Cliente("Ezequiel", "Gimenez", "ezequiel", "ezequiel123", "ezeeze@gmail.com", 'M');
+        Cliente cliente2 = new Cliente("Florencia", "Rodriguez", "florcita", "flor123", "florcita@gmail.com", 'F');
+        Cliente cliente3 = new Cliente("Virginia", "Perez", "viyi", "viyi123", "virginia@gmail.com", 'F');
+        Cliente cliente4 = new Cliente("Roberto", "Lazaro", "robertLaz", "robert123", "rlazaro@gmail.com", 'M');
+        Cliente cliente5 = new Cliente("Rodrigo", "Balcabao", "balcaro", "rodri123", "rodddde@gmail.com", 'M');
+        Cliente cliente6 = new Cliente("Julian", "Dunand", "juli", "julidd123", "juli@gmail.com", 'M');
+        Cliente cliente7 = new Cliente("Julia", "Gonzalez", "juliaGonza", "gonzalesjulia123", "pepegrillo@gmail.com", 'F');
+        Cliente cliente8 = new Cliente("Francisco", "Bueno", "francis", "francis123", "frandrane@gmail.com", 'M');
+        Cliente cliente9 = new Cliente("Pablo", "Ruper", "pruper", "prupppper123", "ssssaaaa@gmail.com", 'M');
+
+        sistema.addElementoToArrayList(adminPrueba);
+        sistema.addElementoToArrayList(cliente0);
+        sistema.addElementoToArrayList(cliente1);
+        sistema.addElementoToArrayList(cliente2);
+        sistema.addElementoToArrayList(cliente3);
+        sistema.addElementoToArrayList(cliente4);
+        sistema.addElementoToArrayList(cliente5);
+        sistema.addElementoToArrayList(cliente6);
+        sistema.addElementoToArrayList(cliente7);
+        sistema.addElementoToArrayList(cliente8);
+        sistema.addElementoToArrayList(cliente9);
+
+
+        //endregion
 
         //region PRODUCTOS HARDCODEADOS Y AGREGADOS A LISTA GENERICA
 
@@ -273,6 +295,21 @@ public class Main {
 
 
         //endregion
+        sistema.arrayListToMapCerveza();
+        sistema.addToMapPersona(adminPrueba);
+        sistema.addToMapPersona(cliente0);
+
+        /*Pedido p1 = new Pedido(cliente0);
+        p1.alta(sistema);
+        sistema.addToMapPedidos(p1);
+
+        Pedido p2 = new Pedido(cliente0);
+        p2.alta(sistema);
+        sistema.addToMapPedidos(p2);*/
+
+
+
+
 
 
 //        System.out.println(sistema.listarElementos());

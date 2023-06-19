@@ -169,4 +169,31 @@ public class TecBeer <T>{
             }
         }
     }
+
+    public void addToMapPedidos(Pedido nuevoPedido){
+        mapPedidos.put(nuevoPedido.getIdPedido(), nuevoPedido);
+    }
+
+    public String verTodosLosPedidos(){
+        String lista = "No hay pedidos";
+        if(!mapPedidos.isEmpty()){
+            lista = "";
+            for(Map.Entry<Integer, Pedido> entry:mapPedidos.entrySet()){
+                lista+=entry.getValue().toString()+"\n";
+            }
+        }
+        return lista;
+
+    }
+
+    public void verPedidosPorCliente (Cliente cliente){
+        double costoTotalPedidos=0.0;
+        for(Map.Entry<Integer, Pedido> entry : mapPedidos.entrySet()){
+            if(entry.getValue().getCliente().equals(cliente)){
+                Consola.escribir(entry.getValue().toString());
+                costoTotalPedidos+=entry.getValue().getCostoPedido();
+            }
+        }
+        System.out.println("Costo total pedidos: "+costoTotalPedidos);
+    }
 }

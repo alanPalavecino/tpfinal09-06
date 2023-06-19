@@ -2,6 +2,7 @@ package Models;
 
 import Enums.Estilos;
 import Excepciones.Invalido;
+import Excepciones.StockInsuficiente;
 import Interfaz.iABM;
 
 import java.text.SimpleDateFormat;
@@ -12,20 +13,71 @@ import java.util.Scanner;
 
 public class Pedido implements iABM {
 
-    //    private int idDetallePedido;
-    //    private int idCabeceraPedido;
-    //private float descuento;
+
     private static int cont= 999;
     private int idPedido;
     private String fecha;
     private Cliente cliente;
     private ArrayList<Cerveza> cervezas; //No pusimos un atributo id para producto porque ya lo tenemos en el array con cada uno.
+    private double costoPedido;
 
     public Pedido(Cliente cliente) {
         cont++;
         this.idPedido = cont;
         this.cliente = cliente;
         this.cervezas = new ArrayList<>();
+        this.costoPedido = 0;
+    }
+
+    public int getIdPedido() {
+        return idPedido;
+    }
+
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public ArrayList<Cerveza> getCervezas() {
+        return cervezas;
+    }
+
+    public void setCervezas(ArrayList<Cerveza> cervezas) {
+        this.cervezas = cervezas;
+    }
+
+    public double getCostoPedido() {
+        return costoPedido;
+    }
+
+    public void setCostoPedido(double costoPedido) {
+        this.costoPedido = costoPedido;
+    }
+
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "idPedido=" + idPedido +
+                ", fecha='" + fecha + '\'' +
+                ", cliente=" + cliente.getUsername() +
+                ", cervezas=" + cervezas +
+                ", costoPedido=" + costoPedido +
+                '}';
     }
 
     public void alta(TecBeer sistema){
@@ -73,14 +125,23 @@ public class Pedido implements iABM {
                     Consola.escribir("Ingrese la cantidad que desea comprar: ");
                     int cantidad = sc.nextInt();
                     sc.nextLine();
-                    if(sistema.devolverProductoPorId(idIngresado).getStock() >= cantidad){
-                        cervezas.add(sistema.devolverProductoPorId(idIngresado));
-                        int stockActual = sistema.devolverProductoPorId(idIngresado).getStock();
-                        sistema.devolverProductoPorId(idIngresado).setStock(stockActual - cantidad);
-                        Consola.escribir("La compra se ha realizado exitosamente.");
-                        Consola.escribir("Desea comprar más productos? (S/N)");
-                        String opcionStr = sc.nextLine();
-                        opcion = opcionStr.charAt(0);
+                    try{
+                        if(sistema.devolverProductoPorId(idIngresado).getStock() > cantidad){
+                            cervezas.add(sistema.devolverProductoPorId(idIngresado));
+
+                            costoPedido=sistema.devolverProductoPorId(idIngresado).getPrecio()*cantidad;
+
+                            int stockActual = sistema.devolverProductoPorId(idIngresado).getStock();
+                            sistema.devolverProductoPorId(idIngresado).setStock(stockActual - cantidad);
+                            Consola.escribir("La compra se ha realizado exitosamente.");
+                            Consola.escribir("Desea comprar más productos? (S/N)");
+                            String opcionStr = sc.nextLine().toUpperCase();
+                            opcion = opcionStr.charAt(0);
+                        }else{
+                            throw new StockInsuficiente("No hay stock <!>");
+                        }
+                    }catch (StockInsuficiente e){
+                        Consola.escribir(e.getMessage());
                     }
                 }else throw new Invalido("El ID ingresado no pertenece a un producto válido.");
             }catch (Exception e){
@@ -93,4 +154,6 @@ public class Pedido implements iABM {
     }
     public void baja(TecBeer sistema, Object objeto){};
     public void modificacion(TecBeer sistema){};
+
+
 }

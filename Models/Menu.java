@@ -148,7 +148,7 @@ public class Menu {
                     adminCliente(sistema);
                     break;
                 case 2:
-                    adminPedido();
+                    adminPedido(sistema);
                     break;
                 case 3:
                     adminProducto(sistema);
@@ -208,7 +208,7 @@ public class Menu {
         int opcion = -1;
         do{
             do{
-                Consola.escribir("1.Ver pedido");
+                Consola.escribir("1.Ver pedidos");
                 Consola.escribir("2.Hacer pedido");
                 Consola.escribir("3.Eliminar pedido");
                 Consola.escribir("4.Ver productos");
@@ -218,10 +218,15 @@ public class Menu {
 
             switch (opcion){
                 case 1:
+                    Consola.escribir("PEDIDOS REALIZADOS");
+                    sistema.verPedidosPorCliente(cliente);
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    Consola.limpiar();
                     break;
                 case 2:
                     Pedido pedido = new Pedido(cliente);
                     pedido.alta(sistema);
+                    sistema.addToMapPedidos(pedido);
                     break;
                 case 3:
                     break;
@@ -309,6 +314,8 @@ public class Menu {
                 case 6:
                     //ACA TENEMOS QUE VER SI HACEMOS DOS HASHMAP APARTE, UNO PARA CLIENTES ACTIVOS Y OTRO PARA INACTIVOS.
                     //O SI TRABAJAMOS DIRECTAMENTE CON DOS ARCHIVOS DE CLIENTES ACTIVOS Y OTRO DE INACTIVOS.
+
+                    //ME PARECE LO MEJOR SACAR ESTA OPCION ASI SOLO TRABAJAMOS CON LA BAJA
                     break;
                 case 7:
                     Consola.escribir("Ingrese el Username del cliente que desea modificar: ");
@@ -334,8 +341,9 @@ public class Menu {
     //endregion
 
     //region ADMIN - PEDIDO
-    public static void adminPedido(){
+    public static void adminPedido(TecBeer sistema){
         int opcion = -1;
+        Persona aux;
         do{
             do{
                 Consola.escribir("1.Ver pedidos");
@@ -347,8 +355,15 @@ public class Menu {
 
             switch (opcion){
                 case 1:
+                    System.out.println(sistema.verTodosLosPedidos());
                     break;
                 case 2:
+                    Consola.limpiar();
+                    String guardaUser = Consola.leerString("Ingrese el nombre de usuario del cliente");
+                    aux=sistema.devolverPersonaPorUserName(guardaUser);
+                    sistema.verPedidosPorCliente((Cliente) aux);
+
+
                     break;
                 case 3:
                     break;
