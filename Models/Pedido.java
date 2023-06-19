@@ -1,8 +1,14 @@
 package Models;
 
+import Enums.Estilos;
+import Excepciones.Invalido;
 import Interfaz.iABM;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Pedido implements iABM {
 
@@ -15,20 +21,76 @@ public class Pedido implements iABM {
     private Cliente cliente;
     private ArrayList<Cerveza> cervezas; //No pusimos un atributo id para producto porque ya lo tenemos en el array con cada uno.
 
-    public Pedido() {
+    public Pedido(Cliente cliente) {
         cont++;
         this.idPedido = cont;
-    }
-
-    public Pedido(int idPedido, String fecha, Cliente cliente, ArrayList<Cerveza> cervezas) {
-        cont++;
-        this.idPedido = cont;
-        this.fecha = fecha;
         this.cliente = cliente;
         this.cervezas = new ArrayList<>();
     }
 
-    public void alta(TecBeer sistema){};
+    public void alta(TecBeer sistema){
+        Date fechaActual = new Date();
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        this.fecha = formatoFecha.format(fechaActual);
+        Scanner sc = new Scanner(System.in);
+        char opcion = 'N';
+        do{
+            int opcionEstilo = 1;
+            for(Estilos estilo : Estilos.values()){
+                Consola.escribir(opcionEstilo + ". " + estilo);
+                opcionEstilo++;
+            }
+            int estiloElegido;
+            do{
+                try{
+                    Consola.escribir("Seleccione el Estilo de cerveza que desea comprar: ");
+                    estiloElegido = sc.nextInt();
+                    sc.nextLine();
+                    while (estiloElegido < 1 || estiloElegido > Estilos.values().length){
+                        Consola.escribir("Opción inválida, por favor ingrese la opción nuevamente: ");
+                        estiloElegido = sc.nextInt();
+                        sc.nextLine();
+                    }
+                }catch (InputMismatchException e){
+                    Consola.escribir("Por favor ingrese solamente numeros: ");
+                    while (!sc.hasNextInt()){
+                        Consola.escribir("Por favor ingrese solamente numeros: ");
+                        sc.next();
+                    }
+                    estiloElegido = sc.nextInt();
+                    sc.nextLine();
+                }
+            }while (estiloElegido < 1 || estiloElegido > Estilos.values().length);
+
+            sistema.verPorEstilo(Estilos.obtenerEstilo(estiloElegido).name());
+            Consola.escribir("Ingrese el ID del producto que desea comprar: ");
+            int idIngresado = sc.nextInt();
+            sc.nextLine();
+            try{
+                if(sistema.devolverProductoPorId(idIngresado) != null && sistema.devolverProductoPorId(idIngresado).getActivo() == 1){
+                    Consola.escribir("El ID ingresado pertenece al siguiente producto: ");
+                    Consola.escribir(sistema.devolverProductoPorId(idIngresado).toString());
+                    Consola.escribir("Ingrese la cantidad que desea comprar: ");
+                    int cantidad = sc.nextInt();
+                    sc.nextLine();
+                    if(sistema.devolverProductoPorId(idIngresado).getStock() >= cantidad){
+                        cervezas.add(sistema.devolverProductoPorId(idIngresado));
+                        int stockActual = sistema.devolverProductoPorId(idIngresado).getStock();
+                        sistema.devolverProductoPorId(idIngresado).setStock(stockActual - cantidad);
+                        Consola.escribir("La compra se ha realizado exitosamente.");
+                        Consola.escribir("Desea comprar más productos? (S/N)");
+                        String opcionStr = sc.nextLine();
+                        opcion = opcionStr.charAt(0);
+                    }
+                }else throw new Invalido("El ID ingresado no pertenece a un producto válido.");
+            }catch (Exception e){
+                Consola.escribir(e.getMessage());
+                Consola.escribir("Presione cualquier tecla para continuar");
+                sc.nextLine();
+            }
+        }while (opcion == 'S');
+
+    }
     public void baja(TecBeer sistema, Object objeto){};
     public void modificacion(TecBeer sistema){};
 }

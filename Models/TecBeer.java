@@ -5,21 +5,20 @@ import Excepciones.Invalido;
 import Models.Persona;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TecBeer <T>{
 
     private ArrayList<T> elementos;//ESTE ARRAYlist SERIA EL GENERAL DE TOOO Y A PARTIR DE ACA DERIVAR A HASHMAP O LO QUE SEA QUE QUERRAMOS TRABAJAR
     private Map<String, Persona> mapPersona;
     private Map<String, ArrayList<Cerveza>> mapCerveza;
+    private TreeMap<Integer, Pedido> mapPedidos;
 
     public TecBeer() {
         this.elementos = new ArrayList<>();
         this.mapPersona = new HashMap<>();
         this.mapCerveza = new HashMap<>();
+        this.mapPedidos = new TreeMap<>();
     }
 
     //region LISTA GENERICA METODS
@@ -122,6 +121,17 @@ public class TecBeer <T>{
 
     public void addToMapCerveza(Cerveza nuevaCerveza){mapCerveza.get(nuevaCerveza.getEstilo()).add(nuevaCerveza);}
 
+    public void removeToMapCerveza(int id) {
+        for(Map.Entry<String, ArrayList<Cerveza>> entry : mapCerveza.entrySet()){
+            for(Cerveza cerveza : entry.getValue()){
+                if(cerveza.getId() == id){
+                    entry.getValue().remove(cerveza);
+                    break;
+                }
+            }
+        }
+    }
+
     public void verTodosLosProductos(){
         for(String estilo : mapCerveza.keySet()){
             Consola.escribir("Listado de Cervezas estilo " + estilo);
@@ -149,7 +159,8 @@ public class TecBeer <T>{
     public void verPorEstilo (String estilo){
 
         for(Map.Entry<String, ArrayList<Cerveza>> entry : mapCerveza.entrySet()){
-            if(entry.getKey().equals(estilo)){
+            String estiloMap = entry.getKey();
+            if(estiloMap.equalsIgnoreCase(estilo)){
                 ArrayList<Cerveza> cervezas = entry.getValue();
                 for(Cerveza cerveza : cervezas){
                     Consola.escribir(cerveza.toString());

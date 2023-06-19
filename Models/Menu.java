@@ -16,6 +16,7 @@ public class Menu {
         /**IMPORTANTE*/
         //HAY QUE TRAER TODOS LOS CLIENTES DESDE ARCHIVOS CON SUS PEDIDOS Y LOS PRODUCTOS DEL PEDIDO
 
+        sistema.arrayListToMapCerveza();
         int opcion = -1;
         do{
             do{
@@ -119,7 +120,7 @@ public class Menu {
                     usuarioCliente(sistema, cliente);
                     break;
                 case 2:
-                    usuarioPedido();
+                    usuarioPedido(sistema, cliente);
                     break;
                 case 0:
                     break;
@@ -203,7 +204,7 @@ public class Menu {
     //endregion
 
     //region USUARIO - PEDIDO
-    public static void usuarioPedido(){
+    public static void usuarioPedido(TecBeer sistema, Cliente cliente){
         int opcion = -1;
         do{
             do{
@@ -219,6 +220,8 @@ public class Menu {
                 case 1:
                     break;
                 case 2:
+                    Pedido pedido = new Pedido(cliente);
+                    pedido.alta(sistema);
                     break;
                 case 3:
                     break;
@@ -358,9 +361,9 @@ public class Menu {
 
     //region ADMIN - PRODUCTO
     public static void adminProducto(TecBeer sistema){
-        sistema.arrayListToMapCerveza();
         Scanner sc = new Scanner(System.in);
         int opcion = -1;
+        int idIngresado;
         do{
             do{
                 Consola.escribir("1.Alta");
@@ -384,10 +387,48 @@ public class Menu {
                     sc.nextLine();
                     break;
                 case 2:
+                    char opcionBaja;
+                    Consola.escribir("Ingrese el ID del producto que desea dar de baja: ");
+                    idIngresado = sc.nextInt();
+                    sc.nextLine();
+                    try{
+                        if(sistema.devolverProductoPorId(idIngresado) != null){
+                            Consola.escribir("El ID ingresado pertenece al siguiente producto: ");
+                            Consola.escribir(sistema.devolverProductoPorId(idIngresado).toString());
+                            Consola.escribir("Desea dar de baja el producto? S/N");
+                            String opcionBajaStr = sc.nextLine();
+                            opcionBaja = opcionBajaStr.charAt(0);
+                            do{
+                                if(opcionBaja == 'S'){
+                                    sistema.devolverProductoPorId(idIngresado).baja(sistema, sistema.devolverProductoPorId(idIngresado));
+                                    Consola.escribir("El producto ha sido dado de baja exitosamente.");
+                                    Consola.escribir("Presione cualquier tecla para continuar");
+                                    sc.nextLine();
+                                }else if (opcionBaja == 'N') break;
+                                else {
+                                    Consola.escribir("Opción inválida");
+                                    Consola.escribir("Desea dar de baja el producto? S/N");
+                                    opcionBajaStr = sc.nextLine();
+                                    opcionBaja = opcionBajaStr.charAt(0);
+                                    if(opcionBaja == 'S'){
+                                        sistema.devolverProductoPorId(idIngresado).baja(sistema, sistema.devolverProductoPorId(idIngresado));
+                                        Consola.escribir("El producto ha sido dado de baja exitosamente.");
+                                        Consola.escribir("Presione cualquier tecla para continuar");
+                                        sc.nextLine();
+                                    }
+                                }
+                            }while (opcionBaja != 'N' && opcionBaja != 'S');
+                        }else throw new Invalido("El ID ingresado no pertenece a un producto válido.");
+                    }catch (Exception e){
+                        Consola.escribir(e.getMessage());
+                        Consola.escribir("Presione cualquier tecla para continuar");
+                        sc.nextLine();
+                    }
                     break;
                 case 3:
                     Consola.escribir("Ingrese el ID del producto que desea modificar: ");
-                    int idIngresado = sc.nextInt();
+                    idIngresado = sc.nextInt();
+                    sc.nextLine();
                     try{
                         if(sistema.devolverProductoPorId(idIngresado) != null){
                             Consola.escribir("El ID ingresado pertenece al siguiente producto: ");
@@ -404,6 +445,43 @@ public class Menu {
                     }
                     break;
                 case 4:
+                    char opcionEliminar;
+                    Consola.escribir("Ingrese el ID del producto que desea eliminar: ");
+                    idIngresado = sc.nextInt();
+                    sc.nextLine();
+                    try{
+                        if(sistema.devolverProductoPorId(idIngresado) != null){
+                            Consola.escribir("El ID ingresado pertenece al siguiente producto: ");
+                            Consola.escribir(sistema.devolverProductoPorId(idIngresado).toString());
+                            Consola.escribir("Desea eliminar el producto? S/N");
+                            String opcionBajaStr = sc.nextLine();
+                            opcionBaja = opcionBajaStr.charAt(0);
+                            do{
+                                if(opcionBaja == 'S'){
+                                    sistema.removeToMapCerveza(idIngresado);
+                                    Consola.escribir("El producto ha sido eliminado exitosamente.");
+                                    Consola.escribir("Presione cualquier tecla para continuar");
+                                    sc.nextLine();
+                                }else if (opcionBaja == 'N') break;
+                                else {
+                                    Consola.escribir("Opción inválida");
+                                    Consola.escribir("Desea dar de baja el producto? S/N");
+                                    opcionBajaStr = sc.nextLine();
+                                    opcionBaja = opcionBajaStr.charAt(0);
+                                    if(opcionBaja == 'S'){
+                                        sistema.removeToMapCerveza(idIngresado);
+                                        Consola.escribir("El producto ha sido eliminado exitosamente.");
+                                        Consola.escribir("Presione cualquier tecla para continuar");
+                                        sc.nextLine();
+                                    }
+                                }
+                            }while (opcionBaja != 'N' && opcionBaja != 'S');
+                        }else throw new Invalido("El ID ingresado no pertenece a un producto válido.");
+                    }catch (Exception e){
+                        Consola.escribir(e.getMessage());
+                        Consola.escribir("Presione cualquier tecla para continuar");
+                        sc.nextLine();
+                    }
                     break;
                 case 5:
                     break;

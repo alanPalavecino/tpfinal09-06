@@ -2,6 +2,7 @@ package Models;
 
 import Enums.Estilos;
 import Enums.Tipo;
+import Excepciones.Invalido;
 import Interfaz.iABM;
 
 import java.util.InputMismatchException;
@@ -90,6 +91,14 @@ public class Cerveza implements iABM{
         return id;
     }
 
+    public int getActivo() {
+        return activo;
+    }
+
+    public void setActivo(int activo) {
+        this.activo = activo;
+    }
+
     @Override
     public String toString() {
         return "Cerveza{" +
@@ -100,6 +109,7 @@ public class Cerveza implements iABM{
                 ", tipo=" + tipo +
 //                ", precio=" + precio +
                 ", stock=" + stock +
+                ", activo=" + activo +
                 '}';
     }
 
@@ -174,6 +184,13 @@ public class Cerveza implements iABM{
 
     @Override
     public void baja(TecBeer sistema, Object objeto) {
+        try{
+            if(objeto instanceof Cerveza){
+                ((Cerveza) objeto).setActivo(0);
+            }else throw new Invalido("Error al intentar dar de baja el producto.");
+        }catch (Exception e){
+            Consola.escribir(e.getMessage());
+        }
 
     }
 
