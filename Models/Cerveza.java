@@ -18,7 +18,8 @@ public class Cerveza implements iABM{
     private String marca;
 
     private Tipo tipo;
-//    private double precio;
+
+    private double precio;
     private Integer stock;
 
     private int activo;
@@ -28,14 +29,14 @@ public class Cerveza implements iABM{
         this.id = cont;
     }
 
-    public Cerveza(String nombre, Estilos estilo, String marca, Tipo tipo, Integer stock) {
+    public Cerveza(String nombre, Estilos estilo, String marca, Tipo tipo, double precio, Integer stock) {
         cont++;
         this.id = cont;
         this.nombre = nombre;
         this.estilo = estilo;
         this.marca = marca;
         this.tipo = tipo;
-//        this.precio = tipo.getPrecio();
+        this.precio = precio * tipo.getLitros();
         this.stock = stock;
         this.activo = 1;
     }
@@ -97,6 +98,10 @@ public class Cerveza implements iABM{
 
     public void setActivo(int activo) {
         this.activo = activo;
+    }
+
+    public double getPrecio() {
+        return precio;
     }
 
     @Override

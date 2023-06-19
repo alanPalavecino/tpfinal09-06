@@ -28,126 +28,126 @@ public class Main {
 
         //region PRODUCTOS HARDCODEADOS Y AGREGADOS A LISTA GENERICA
 
-        Cerveza c1 = new Cerveza("Porter", Estilos.ALE, "Ogham", Tipo.BARRIL_20, 300);
-        Cerveza c1a = new Cerveza("Porter", Estilos.ALE, "Ogham", Tipo.BARRIL_30, 300);
-        Cerveza c1b = new Cerveza("Porter", Estilos.ALE, "Ogham", Tipo.BARRIL_50, 300);
-        Cerveza c1c = new Cerveza("Porter", Estilos.ALE, "Ogham", Tipo.LATA, 300);
-        Cerveza c1d = new Cerveza("Porter", Estilos.ALE, "Ogham", Tipo.BOTELLA, 300);
+        Cerveza c1 = new Cerveza("Porter", Estilos.ALE, "Ogham", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c1a = new Cerveza("Porter", Estilos.ALE, "Ogham", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c1b = new Cerveza("Porter", Estilos.ALE, "Ogham", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c1c = new Cerveza("Porter", Estilos.ALE, "Ogham", Tipo.LATA, 1000,300);
+        Cerveza c1d = new Cerveza("Porter", Estilos.ALE, "Ogham", Tipo.BOTELLA, 1000,300);
 
-        Cerveza c2 = new Cerveza("Golden Ale", Estilos.ALE, "Brew House", Tipo.BARRIL_20, 300);
-        Cerveza c2a = new Cerveza("Golden Ale", Estilos.ALE, "Brew House", Tipo.BARRIL_30, 300);
-        Cerveza c2b = new Cerveza("Golden Ale", Estilos.ALE, "Brew House", Tipo.BARRIL_50, 300);
-        Cerveza c2c = new Cerveza("Golden Ale", Estilos.ALE, "Brew House", Tipo.LATA, 300);
-        Cerveza c2d = new Cerveza("Golden Ale", Estilos.ALE, "Brew House", Tipo.BOTELLA, 300);
+        Cerveza c2 = new Cerveza("Golden Ale", Estilos.ALE, "Brew House", Tipo.BARRIL_20, 1000,300);
+        Cerveza c2a = new Cerveza("Golden Ale", Estilos.ALE, "Brew House", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c2b = new Cerveza("Golden Ale", Estilos.ALE, "Brew House", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c2c = new Cerveza("Golden Ale", Estilos.ALE, "Brew House", Tipo.LATA, 1000, 300);
+        Cerveza c2d = new Cerveza("Golden Ale", Estilos.ALE, "Brew House", Tipo.BOTELLA, 1000, 300);
 
 
-        Cerveza c3 = new Cerveza("Kolsch", Estilos.LAGER, "Antares", Tipo.BARRIL_20, 300);
-        Cerveza c3a = new Cerveza("Kolsch", Estilos.LAGER, "Antares", Tipo.BARRIL_30, 300);
-        Cerveza c3b = new Cerveza("Kolsch", Estilos.LAGER, "Antares", Tipo.BARRIL_50, 300);
-        Cerveza c3c = new Cerveza("Kolsch", Estilos.LAGER, "Antares", Tipo.LATA, 300);
-        Cerveza c3d = new Cerveza("Kolsch", Estilos.LAGER, "Antares", Tipo.BOTELLA, 300);
+        Cerveza c3 = new Cerveza("Kolsch", Estilos.LAGER, "Antares", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c3a = new Cerveza("Kolsch", Estilos.LAGER, "Antares", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c3b = new Cerveza("Kolsch", Estilos.LAGER, "Antares", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c3c = new Cerveza("Kolsch", Estilos.LAGER, "Antares", Tipo.LATA, 1000, 300);
+        Cerveza c3d = new Cerveza("Kolsch", Estilos.LAGER, "Antares", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c4 = new Cerveza("I.P.A.", Estilos.INDIAN_PALE_ALE, "Escondido", Tipo.BARRIL_20, 300);
-        Cerveza c4a = new Cerveza("I.P.A.", Estilos.INDIAN_PALE_ALE, "Escondido", Tipo.BARRIL_30, 300);
-        Cerveza c4b = new Cerveza("I.P.A.", Estilos.INDIAN_PALE_ALE, "Escondido", Tipo.BARRIL_50, 300);
-        Cerveza c4c = new Cerveza("I.P.A.", Estilos.INDIAN_PALE_ALE, "Escondido", Tipo.LATA, 300);
-        Cerveza c4d = new Cerveza("I.P.A.", Estilos.INDIAN_PALE_ALE, "Escondido", Tipo.BOTELLA, 300);
+        Cerveza c4 = new Cerveza("I.P.A.", Estilos.INDIAN_PALE_ALE, "Escondido", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c4a = new Cerveza("I.P.A.", Estilos.INDIAN_PALE_ALE, "Escondido", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c4b = new Cerveza("I.P.A.", Estilos.INDIAN_PALE_ALE, "Escondido", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c4c = new Cerveza("I.P.A.", Estilos.INDIAN_PALE_ALE, "Escondido", Tipo.LATA, 1000, 300);
+        Cerveza c4d = new Cerveza("I.P.A.", Estilos.INDIAN_PALE_ALE, "Escondido", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c5 = new Cerveza("Dubbel", Estilos.BELGIAN, "Cheverry", Tipo.BARRIL_20, 300);
-        Cerveza c5a = new Cerveza("Dubbel", Estilos.BELGIAN, "Cheverry", Tipo.BARRIL_30, 300);
-        Cerveza c5b = new Cerveza("Dubbel", Estilos.BELGIAN, "Cheverry", Tipo.BARRIL_50, 300);
-        Cerveza c5c = new Cerveza("Dubbel", Estilos.BELGIAN, "Cheverry", Tipo.LATA, 300);
-        Cerveza c5d = new Cerveza("Dubbel", Estilos.BELGIAN, "Cheverry", Tipo.BOTELLA, 300);
+        Cerveza c5 = new Cerveza("Dubbel", Estilos.BELGIAN, "Cheverry", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c5a = new Cerveza("Dubbel", Estilos.BELGIAN, "Cheverry", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c5b = new Cerveza("Dubbel", Estilos.BELGIAN, "Cheverry", Tipo.BARRIL_50, 1000,300);
+        Cerveza c5c = new Cerveza("Dubbel", Estilos.BELGIAN, "Cheverry", Tipo.LATA, 1000,300);
+        Cerveza c5d = new Cerveza("Dubbel", Estilos.BELGIAN, "Cheverry", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c6 = new Cerveza("Triple Neipa", Estilos.NEW_ENGLAND_PALE_ALE, "Sir Hopper", Tipo.BARRIL_20, 300);
-        Cerveza c6a = new Cerveza("Triple Neipa", Estilos.NEW_ENGLAND_PALE_ALE, "Sir Hopper", Tipo.BARRIL_30, 300);
-        Cerveza c6b = new Cerveza("Triple Neipa", Estilos.NEW_ENGLAND_PALE_ALE, "Sir Hopper", Tipo.BARRIL_50, 300);
-        Cerveza c6c = new Cerveza("Triple Neipa", Estilos.NEW_ENGLAND_PALE_ALE, "Sir Hopper", Tipo.LATA, 300);
-        Cerveza c6d = new Cerveza("Triple Neipa", Estilos.NEW_ENGLAND_PALE_ALE, "Sir Hopper", Tipo.BOTELLA, 300);
+        Cerveza c6 = new Cerveza("Triple Neipa", Estilos.NEW_ENGLAND_PALE_ALE, "Sir Hopper", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c6a = new Cerveza("Triple Neipa", Estilos.NEW_ENGLAND_PALE_ALE, "Sir Hopper", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c6b = new Cerveza("Triple Neipa", Estilos.NEW_ENGLAND_PALE_ALE, "Sir Hopper", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c6c = new Cerveza("Triple Neipa", Estilos.NEW_ENGLAND_PALE_ALE, "Sir Hopper", Tipo.LATA, 1000, 300);
+        Cerveza c6d = new Cerveza("Triple Neipa", Estilos.NEW_ENGLAND_PALE_ALE, "Sir Hopper", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c7 = new Cerveza("Citra a Ciegas", Estilos.ENGLAND_PALE_ALE, "Strange Brewing", Tipo.BARRIL_20, 300);
-        Cerveza c7a = new Cerveza("Citra a Ciegas", Estilos.ENGLAND_PALE_ALE, "Strange Brewing", Tipo.BARRIL_30, 300);
-        Cerveza c7b = new Cerveza("Citra a Ciegas", Estilos.ENGLAND_PALE_ALE, "Strange Brewing", Tipo.BARRIL_50, 300);
-        Cerveza c7c = new Cerveza("Citra a Ciegas", Estilos.ENGLAND_PALE_ALE, "Strange Brewing", Tipo.LATA, 300);
-        Cerveza c7d = new Cerveza("Citra a Ciegas", Estilos.ENGLAND_PALE_ALE, "Strange Brewing", Tipo.BOTELLA, 300);
+        Cerveza c7 = new Cerveza("Citra a Ciegas", Estilos.ENGLAND_PALE_ALE, "Strange Brewing", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c7a = new Cerveza("Citra a Ciegas", Estilos.ENGLAND_PALE_ALE, "Strange Brewing", Tipo.BARRIL_30, 1000 ,300);
+        Cerveza c7b = new Cerveza("Citra a Ciegas", Estilos.ENGLAND_PALE_ALE, "Strange Brewing", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c7c = new Cerveza("Citra a Ciegas", Estilos.ENGLAND_PALE_ALE, "Strange Brewing", Tipo.LATA, 1000, 300);
+        Cerveza c7d = new Cerveza("Citra a Ciegas", Estilos.ENGLAND_PALE_ALE, "Strange Brewing", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c8 = new Cerveza("Flanders Red", Estilos.SOUR, "Juguetes Perdidos", Tipo.BARRIL_20, 300);
-        Cerveza c8a = new Cerveza("Flanders Red", Estilos.SOUR, "Juguetes Perdidos", Tipo.BARRIL_30, 300);
-        Cerveza c8b = new Cerveza("Flanders Red", Estilos.SOUR, "Juguetes Perdidos", Tipo.BARRIL_50, 300);
-        Cerveza c8c = new Cerveza("Flanders Red", Estilos.SOUR, "Juguetes Perdidos", Tipo.LATA, 300);
-        Cerveza c8d = new Cerveza("Flanders Red", Estilos.SOUR, "Juguetes Perdidos", Tipo.BOTELLA, 300);
+        Cerveza c8 = new Cerveza("Flanders Red", Estilos.SOUR, "Juguetes Perdidos", Tipo.BARRIL_20, 1000 ,300);
+        Cerveza c8a = new Cerveza("Flanders Red", Estilos.SOUR, "Juguetes Perdidos", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c8b = new Cerveza("Flanders Red", Estilos.SOUR, "Juguetes Perdidos", Tipo.BARRIL_50, 1000 ,300);
+        Cerveza c8c = new Cerveza("Flanders Red", Estilos.SOUR, "Juguetes Perdidos", Tipo.LATA, 1000, 300);
+        Cerveza c8d = new Cerveza("Flanders Red", Estilos.SOUR, "Juguetes Perdidos", Tipo.BOTELLA, 1000 ,300);
 
-        Cerveza c9 = new Cerveza("A.P.A.", Estilos.PALE_ALE, "Astor", Tipo.BARRIL_20, 300);
-        Cerveza c9a = new Cerveza("A.P.A.", Estilos.PALE_ALE, "Astor", Tipo.BARRIL_30, 300);
-        Cerveza c9b = new Cerveza("A.P.A.", Estilos.PALE_ALE, "Astor", Tipo.BARRIL_50, 300);
-        Cerveza c9c = new Cerveza("A.P.A.", Estilos.PALE_ALE, "Astor", Tipo.LATA, 300);
-        Cerveza c9d = new Cerveza("A.P.A.", Estilos.PALE_ALE, "Astor", Tipo.BOTELLA, 300);
+        Cerveza c9 = new Cerveza("A.P.A.", Estilos.PALE_ALE, "Astor", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c9a = new Cerveza("A.P.A.", Estilos.PALE_ALE, "Astor", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c9b = new Cerveza("A.P.A.", Estilos.PALE_ALE, "Astor", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c9c = new Cerveza("A.P.A.", Estilos.PALE_ALE, "Astor", Tipo.LATA, 1000, 300);
+        Cerveza c9d = new Cerveza("A.P.A.", Estilos.PALE_ALE, "Astor", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c10 = new Cerveza("Petroleo", Estilos.BARRICA, "Jabalina", Tipo.BARRIL_20, 300);
-        Cerveza c10a = new Cerveza("Petroleo", Estilos.BARRICA, "Jabalina", Tipo.BARRIL_30, 300);
-        Cerveza c10b = new Cerveza("Petroleo", Estilos.BARRICA, "Jabalina", Tipo.BARRIL_50, 300);
-        Cerveza c10c = new Cerveza("Petroleo", Estilos.BARRICA, "Jabalina", Tipo.LATA, 300);
-        Cerveza c10d = new Cerveza("Petroleo", Estilos.BARRICA, "Jabalina", Tipo.BOTELLA, 300);
+        Cerveza c10 = new Cerveza("Petroleo", Estilos.BARRICA, "Jabalina", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c10a = new Cerveza("Petroleo", Estilos.BARRICA, "Jabalina", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c10b = new Cerveza("Petroleo", Estilos.BARRICA, "Jabalina", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c10c = new Cerveza("Petroleo", Estilos.BARRICA, "Jabalina", Tipo.LATA, 1000, 300);
+        Cerveza c10d = new Cerveza("Petroleo", Estilos.BARRICA, "Jabalina", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c11 = new Cerveza("Belgian Blonde", Estilos.BELGIAN, "Leffe", Tipo.BARRIL_20, 300);
-        Cerveza c11a = new Cerveza("Belgian Blonde", Estilos.BELGIAN, "Leffe", Tipo.BARRIL_30, 300);
-        Cerveza c11b = new Cerveza("Belgian Blonde", Estilos.BELGIAN, "Leffe", Tipo.BARRIL_50, 300);
-        Cerveza c11c = new Cerveza("Belgian Blonde", Estilos.BELGIAN, "Leffe", Tipo.LATA, 300);
-        Cerveza c11d = new Cerveza("Belgian Blonde", Estilos.BELGIAN, "Leffe", Tipo.BOTELLA, 300);
+        Cerveza c11 = new Cerveza("Belgian Blonde", Estilos.BELGIAN, "Leffe", Tipo.BARRIL_20, 1000 ,300);
+        Cerveza c11a = new Cerveza("Belgian Blonde", Estilos.BELGIAN, "Leffe", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c11b = new Cerveza("Belgian Blonde", Estilos.BELGIAN, "Leffe", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c11c = new Cerveza("Belgian Blonde", Estilos.BELGIAN, "Leffe", Tipo.LATA, 1000, 300);
+        Cerveza c11d = new Cerveza("Belgian Blonde", Estilos.BELGIAN, "Leffe", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c12 = new Cerveza("Carboheira", Estilos.STOUT, "Kira", Tipo.BARRIL_20, 300);
-        Cerveza c12a = new Cerveza("Carboheira", Estilos.STOUT, "Kira", Tipo.BARRIL_30, 300);
-        Cerveza c12b = new Cerveza("Carboheira", Estilos.STOUT, "Kira", Tipo.BARRIL_50, 300);
-        Cerveza c12c = new Cerveza("Carboheira", Estilos.STOUT, "Kira", Tipo.LATA, 300);
-        Cerveza c12d = new Cerveza("Carboheira", Estilos.STOUT, "Kira", Tipo.BOTELLA, 300);
+        Cerveza c12 = new Cerveza("Carboheira", Estilos.STOUT, "Kira", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c12a = new Cerveza("Carboheira", Estilos.STOUT, "Kira", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c12b = new Cerveza("Carboheira", Estilos.STOUT, "Kira", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c12c = new Cerveza("Carboheira", Estilos.STOUT, "Kira", Tipo.LATA, 1000, 300);
+        Cerveza c12d = new Cerveza("Carboheira", Estilos.STOUT, "Kira", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c13 = new Cerveza("England Pale", Estilos.ENGLAND_PALE_ALE, "Dogfish Head", Tipo.BARRIL_20, 300);
-        Cerveza c13a = new Cerveza("England Pale", Estilos.ENGLAND_PALE_ALE, "Dogfish Head", Tipo.BARRIL_30, 300);
-        Cerveza c13b = new Cerveza("England Pale", Estilos.ENGLAND_PALE_ALE, "Dogfish Head", Tipo.BARRIL_50, 300);
-        Cerveza c13c = new Cerveza("England Pale", Estilos.ENGLAND_PALE_ALE, "Dogfish Head", Tipo.LATA, 300);
-        Cerveza c13d = new Cerveza("England Pale", Estilos.ENGLAND_PALE_ALE, "Dogfish Head", Tipo.BOTELLA, 300);
+        Cerveza c13 = new Cerveza("England Pale", Estilos.ENGLAND_PALE_ALE, "Dogfish Head", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c13a = new Cerveza("England Pale", Estilos.ENGLAND_PALE_ALE, "Dogfish Head", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c13b = new Cerveza("England Pale", Estilos.ENGLAND_PALE_ALE, "Dogfish Head", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c13c = new Cerveza("England Pale", Estilos.ENGLAND_PALE_ALE, "Dogfish Head", Tipo.LATA, 1000, 300);
+        Cerveza c13d = new Cerveza("England Pale", Estilos.ENGLAND_PALE_ALE, "Dogfish Head", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c14 = new Cerveza("Imperial Stout", Estilos.IMPERIAL_STOUT, "Sierra Nevada", Tipo.BARRIL_20, 300);
-        Cerveza c14a = new Cerveza("Imperial Stout", Estilos.IMPERIAL_STOUT, "Sierra Nevada", Tipo.BARRIL_30, 300);
-        Cerveza c14b = new Cerveza("Imperial Stout", Estilos.IMPERIAL_STOUT, "Sierra Nevada", Tipo.BARRIL_50, 300);
-        Cerveza c14c = new Cerveza("Imperial Stout", Estilos.IMPERIAL_STOUT, "Sierra Nevada", Tipo.LATA, 300);
-        Cerveza c14d = new Cerveza("Imperial Stout", Estilos.IMPERIAL_STOUT, "Sierra Nevada", Tipo.BOTELLA, 300);
+        Cerveza c14 = new Cerveza("Imperial Stout", Estilos.IMPERIAL_STOUT, "Sierra Nevada", Tipo.BARRIL_20, 1000 ,300);
+        Cerveza c14a = new Cerveza("Imperial Stout", Estilos.IMPERIAL_STOUT, "Sierra Nevada", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c14b = new Cerveza("Imperial Stout", Estilos.IMPERIAL_STOUT, "Sierra Nevada", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c14c = new Cerveza("Imperial Stout", Estilos.IMPERIAL_STOUT, "Sierra Nevada", Tipo.LATA, 1000, 300);
+        Cerveza c14d = new Cerveza("Imperial Stout", Estilos.IMPERIAL_STOUT, "Sierra Nevada", Tipo.BOTELLA, 1000 ,300);
 
-        Cerveza c15 = new Cerveza("24.7", Estilos.INDIAN_PALE_ALE, "Patagonia", Tipo.BARRIL_20, 300);
-        Cerveza c15a = new Cerveza("24.7", Estilos.INDIAN_PALE_ALE, "Patagonia", Tipo.BARRIL_30, 300);
-        Cerveza c15b = new Cerveza("24.7", Estilos.INDIAN_PALE_ALE, "Patagonia", Tipo.BARRIL_50, 300);
-        Cerveza c15c = new Cerveza("24.7", Estilos.INDIAN_PALE_ALE, "Patagonia", Tipo.LATA, 300);
-        Cerveza c15d = new Cerveza("24.7", Estilos.INDIAN_PALE_ALE, "Patagonia", Tipo.BOTELLA, 300);
+        Cerveza c15 = new Cerveza("24.7", Estilos.INDIAN_PALE_ALE, "Patagonia", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c15a = new Cerveza("24.7", Estilos.INDIAN_PALE_ALE, "Patagonia", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c15b = new Cerveza("24.7", Estilos.INDIAN_PALE_ALE, "Patagonia", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c15c = new Cerveza("24.7", Estilos.INDIAN_PALE_ALE, "Patagonia", Tipo.LATA, 1000, 300);
+        Cerveza c15d = new Cerveza("24.7", Estilos.INDIAN_PALE_ALE, "Patagonia", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c16 = new Cerveza("Maldita Honey", Estilos.ALE, "Baum", Tipo.BARRIL_20, 300);
-        Cerveza c16a = new Cerveza("Maldita Honey", Estilos.ALE, "Baum", Tipo.BARRIL_30, 300);
-        Cerveza c16b = new Cerveza("Maldita Honey", Estilos.ALE, "Baum", Tipo.BARRIL_50, 300);
-        Cerveza c16c = new Cerveza("Maldita Honey", Estilos.ALE, "Baum", Tipo.LATA, 300);
-        Cerveza c16d = new Cerveza("Maldita Honey", Estilos.ALE, "Baum", Tipo.BOTELLA, 300);
+        Cerveza c16 = new Cerveza("Maldita Honey", Estilos.ALE, "Baum", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c16a = new Cerveza("Maldita Honey", Estilos.ALE, "Baum", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c16b = new Cerveza("Maldita Honey", Estilos.ALE, "Baum", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c16c = new Cerveza("Maldita Honey", Estilos.ALE, "Baum", Tipo.LATA, 1000, 300);
+        Cerveza c16d = new Cerveza("Maldita Honey", Estilos.ALE, "Baum", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c17 = new Cerveza("Amber Ale", Estilos.ALE, "Gluck", Tipo.BARRIL_20, 300);
-        Cerveza c17a = new Cerveza("Amber Ale", Estilos.ALE, "Gluck", Tipo.BARRIL_30, 300);
-        Cerveza c17b = new Cerveza("Amber Ale", Estilos.ALE, "Gluck", Tipo.BARRIL_50, 300);
-        Cerveza c17c = new Cerveza("Amber Ale", Estilos.ALE, "Gluck", Tipo.LATA, 300);
-        Cerveza c17d = new Cerveza("Amber Ale", Estilos.ALE, "Gluck", Tipo.BOTELLA, 300);
+        Cerveza c17 = new Cerveza("Amber Ale", Estilos.ALE, "Gluck", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c17a = new Cerveza("Amber Ale", Estilos.ALE, "Gluck", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c17b = new Cerveza("Amber Ale", Estilos.ALE, "Gluck", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c17c = new Cerveza("Amber Ale", Estilos.ALE, "Gluck", Tipo.LATA, 1000, 300);
+        Cerveza c17d = new Cerveza("Amber Ale", Estilos.ALE, "Gluck", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c18 = new Cerveza("Barley Wine", Estilos.BARRICA, "Borneo", Tipo.BARRIL_20, 300);
-        Cerveza c18a = new Cerveza("Barley Wine", Estilos.BARRICA, "Borneo", Tipo.BARRIL_30, 300);
-        Cerveza c18b = new Cerveza("Barley Wine", Estilos.BARRICA, "Borneo", Tipo.BARRIL_50, 300);
-        Cerveza c18c = new Cerveza("Barley Wine", Estilos.BARRICA, "Borneo", Tipo.LATA, 300);
-        Cerveza c18d = new Cerveza("Barley Wine", Estilos.BARRICA, "Borneo", Tipo.BOTELLA, 300);
+        Cerveza c18 = new Cerveza("Barley Wine", Estilos.BARRICA, "Borneo", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c18a = new Cerveza("Barley Wine", Estilos.BARRICA, "Borneo", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c18b = new Cerveza("Barley Wine", Estilos.BARRICA, "Borneo", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c18c = new Cerveza("Barley Wine", Estilos.BARRICA, "Borneo", Tipo.LATA, 1000, 300);
+        Cerveza c18d = new Cerveza("Barley Wine", Estilos.BARRICA, "Borneo", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c19 = new Cerveza("N.E", Estilos.NEW_ENGLAND_PALE_ALE, "Itzel Craft Beer", Tipo.BARRIL_20, 300);
-        Cerveza c19a = new Cerveza("N.E", Estilos.NEW_ENGLAND_PALE_ALE, "Itzel Craft Beer", Tipo.BARRIL_30, 300);
-        Cerveza c19b = new Cerveza("N.E", Estilos.NEW_ENGLAND_PALE_ALE, "Itzel Craft Beer", Tipo.BARRIL_50, 300);
-        Cerveza c19c = new Cerveza("N.E", Estilos.NEW_ENGLAND_PALE_ALE, "Itzel Craft Beer", Tipo.LATA, 300);
-        Cerveza c19d = new Cerveza("N.E", Estilos.NEW_ENGLAND_PALE_ALE, "Itzel Craft Beer", Tipo.BOTELLA, 300);
+        Cerveza c19 = new Cerveza("N.E", Estilos.NEW_ENGLAND_PALE_ALE, "Itzel Craft Beer", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c19a = new Cerveza("N.E", Estilos.NEW_ENGLAND_PALE_ALE, "Itzel Craft Beer", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c19b = new Cerveza("N.E", Estilos.NEW_ENGLAND_PALE_ALE, "Itzel Craft Beer", Tipo.BARRIL_50, 1000 ,300);
+        Cerveza c19c = new Cerveza("N.E", Estilos.NEW_ENGLAND_PALE_ALE, "Itzel Craft Beer", Tipo.LATA, 1000 ,300);
+        Cerveza c19d = new Cerveza("N.E", Estilos.NEW_ENGLAND_PALE_ALE, "Itzel Craft Beer", Tipo.BOTELLA, 1000, 300);
 
-        Cerveza c20 = new Cerveza("Blonde Ale", Estilos.ALE, "Gaia", Tipo.BARRIL_20, 300);
-        Cerveza c20a = new Cerveza("Blonde Ale", Estilos.ALE, "Gaia", Tipo.BARRIL_30, 300);
-        Cerveza c20b = new Cerveza("Blonde Ale", Estilos.ALE, "Gaia", Tipo.BARRIL_50, 300);
-        Cerveza c20c = new Cerveza("Blonde Ale", Estilos.ALE, "Gaia", Tipo.LATA, 300);
-        Cerveza c20d = new Cerveza("Blonde Ale", Estilos.ALE, "Gaia", Tipo.BOTELLA, 300);
+        Cerveza c20 = new Cerveza("Blonde Ale", Estilos.ALE, "Gaia", Tipo.BARRIL_20, 1000, 300);
+        Cerveza c20a = new Cerveza("Blonde Ale", Estilos.ALE, "Gaia", Tipo.BARRIL_30, 1000, 300);
+        Cerveza c20b = new Cerveza("Blonde Ale", Estilos.ALE, "Gaia", Tipo.BARRIL_50, 1000, 300);
+        Cerveza c20c = new Cerveza("Blonde Ale", Estilos.ALE, "Gaia", Tipo.LATA, 1000, 300);
+        Cerveza c20d = new Cerveza("Blonde Ale", Estilos.ALE, "Gaia", Tipo.BOTELLA, 1000, 300);
 
 
 

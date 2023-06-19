@@ -17,6 +17,7 @@ public class Cliente extends Persona implements iABM {
     public Cliente(String nombre, String apellido, String username, String password, String email, char genero) {
         super(nombre, apellido, username, password, email, genero, 0);
     }
+
     @Override
     public void alta(TecBeer sistema) {
         Scanner sc = new Scanner(System.in);

@@ -2,6 +2,7 @@ package Models;
 
 import Enums.Estilos;
 import Excepciones.Invalido;
+import Excepciones.StockInsuficiente;
 import Interfaz.iABM;
 
 import java.text.SimpleDateFormat;
@@ -18,6 +19,7 @@ public class Pedido implements iABM {
     private static int cont= 999;
     private int idPedido;
     private String fecha;
+
     private Cliente cliente;
     private ArrayList<Cerveza> cervezas; //No pusimos un atributo id para producto porque ya lo tenemos en el array con cada uno.
 
@@ -52,7 +54,6 @@ public class Pedido implements iABM {
                         sc.nextLine();
                     }
                 }catch (InputMismatchException e){
-                    Consola.escribir("Por favor ingrese solamente numeros: ");
                     while (!sc.hasNextInt()){
                         Consola.escribir("Por favor ingrese solamente numeros: ");
                         sc.next();
@@ -73,11 +74,18 @@ public class Pedido implements iABM {
                     Consola.escribir("Ingrese la cantidad que desea comprar: ");
                     int cantidad = sc.nextInt();
                     sc.nextLine();
-                    if(sistema.devolverProductoPorId(idIngresado).getStock() >= cantidad){
-                        cervezas.add(sistema.devolverProductoPorId(idIngresado));
-                        int stockActual = sistema.devolverProductoPorId(idIngresado).getStock();
-                        sistema.devolverProductoPorId(idIngresado).setStock(stockActual - cantidad);
-                        Consola.escribir("La compra se ha realizado exitosamente.");
+                    try{
+                        if(sistema.devolverProductoPorId(idIngresado).getStock() >= cantidad){
+                            cervezas.add(sistema.devolverProductoPorId(idIngresado));
+                            int stockActual = sistema.devolverProductoPorId(idIngresado).getStock();
+                            sistema.devolverProductoPorId(idIngresado).setStock(stockActual - cantidad);
+                            Consola.escribir("La compra se ha realizado exitosamente.");
+                            Consola.escribir("Desea comprar más productos? (S/N)");
+                            String opcionStr = sc.nextLine();
+                            opcion = opcionStr.charAt(0);
+                        }else throw new StockInsuficiente("No hay suficiente stock disponible para esa cantidad.");
+                    }catch (Exception e){
+                        Consola.escribir(e.getMessage());
                         Consola.escribir("Desea comprar más productos? (S/N)");
                         String opcionStr = sc.nextLine();
                         opcion = opcionStr.charAt(0);
@@ -93,4 +101,22 @@ public class Pedido implements iABM {
     }
     public void baja(TecBeer sistema, Object objeto){};
     public void modificacion(TecBeer sistema){};
+
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "idPedido=" + idPedido +
+                ", fecha='" + fecha + '\'' +
+                ", cliente=" + cliente.getUsername() +
+                ", cervezas=" + cervezas +
+                '}';
+    }
+
+    public int getIdPedido() {
+        return idPedido;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
 }

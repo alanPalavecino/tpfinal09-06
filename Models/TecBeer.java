@@ -169,4 +169,17 @@ public class TecBeer <T>{
             }
         }
     }
+
+    public void addToMapPedidos(Pedido nuevoPedido){
+        mapPedidos.put(nuevoPedido.getIdPedido(), nuevoPedido);
+    }
+
+    public void verPedidosPorCliente (Cliente cliente){
+
+        for(Map.Entry<Integer, Pedido> entry : mapPedidos.entrySet()){
+            if(entry.getValue().getCliente().equals(cliente)){
+                Consola.escribir(entry.getValue().toString());
+            }
+        }
+    }
 }

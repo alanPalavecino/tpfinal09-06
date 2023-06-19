@@ -8,15 +8,13 @@ public enum Tipo {
     BOTELLA(1);
 
     private double litros;
-    private double precio;
 
     Tipo(double litros) {
         this.litros = litros;
-        this.precio = (litros*50);
     }
 
-    public double getPrecio() {
-        return precio;
+    public double getLitros() {
+        return litros;
     }
 
     public static Tipo obtenerTipo(int opcion) {

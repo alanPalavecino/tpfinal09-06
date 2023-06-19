@@ -205,10 +205,11 @@ public class Menu {
 
     //region USUARIO - PEDIDO
     public static void usuarioPedido(TecBeer sistema, Cliente cliente){
+        Scanner sc = new Scanner(System.in);
         int opcion = -1;
         do{
             do{
-                Consola.escribir("1.Ver pedido");
+                Consola.escribir("1.Ver pedidos");
                 Consola.escribir("2.Hacer pedido");
                 Consola.escribir("3.Eliminar pedido");
                 Consola.escribir("4.Ver productos");
@@ -218,10 +219,18 @@ public class Menu {
 
             switch (opcion){
                 case 1:
+                    Consola.escribir("Usted ha realizado los siguientes pedidos: ");
+                    sistema.verPedidosPorCliente(cliente);
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 2:
                     Pedido pedido = new Pedido(cliente);
                     pedido.alta(sistema);
+                    sistema.addToMapPedidos(pedido);
+                    Consola.escribir("El pedido ha sido realizado exitosamente.");
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 3:
                     break;
