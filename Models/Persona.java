@@ -2,13 +2,14 @@ package Models;
 
 import Interfaz.iABM;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static Models.Consola.sc;
 
-public abstract class Persona{
+public abstract class Persona implements Serializable {
 
     // agregue algunos parametros
     private static int cont = 0;
@@ -119,5 +120,18 @@ public abstract class Persona{
                 ", \nrol=" + rol +
                 ", \nactivo=" + activo +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Persona)) return false;
+        Persona persona = (Persona) o;
+        return id == persona.id && Objects.equals(username, persona.username);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, username);
     }
 }

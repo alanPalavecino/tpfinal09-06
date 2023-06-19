@@ -12,6 +12,7 @@ import java.io.ObjectOutput;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) throws IOException, Invalido {
@@ -19,7 +20,7 @@ public class Main {
 
         TecBeer sistema = new TecBeer();
 
-        //region ADMIN Y CLIENTES HARDCODEADOS Y AGREAGADOS A LA LISTA GENERICA
+        //region ADMIN Y CLIENTES HARDCODEADOS Y AGREGADOS A LA LISTA GENERICA
 
         Admin adminPrueba = new Admin("Octavio", "Lopez", "Oti", "Lopez1503", "lopezortizoctavio@gmail.com", 'M');
         Cliente cliente0 = new Cliente("Pedro", "Perez", "pepe", "pepe123", "pepe@gmail.com", 'M');
@@ -298,6 +299,15 @@ public class Main {
         sistema.arrayListToMapCerveza();
         sistema.addToMapPersona(adminPrueba);
         sistema.addToMapPersona(cliente0);
+        sistema.addToMapPersona(cliente1);
+        sistema.addToMapPersona(cliente2);
+        sistema.addToMapPersona(cliente3);
+        sistema.addToMapPersona(cliente4);
+        sistema.addToMapPersona(cliente5);
+        sistema.addToMapPersona(cliente6);
+        sistema.addToMapPersona(cliente7);
+        sistema.addToMapPersona(cliente8);
+        sistema.addToMapPersona(cliente9);
 
         /*Pedido p1 = new Pedido(cliente0);
         p1.alta(sistema);
@@ -306,9 +316,6 @@ public class Main {
         Pedido p2 = new Pedido(cliente0);
         p2.alta(sistema);
         sistema.addToMapPedidos(p2);*/
-
-
-
 
 
 

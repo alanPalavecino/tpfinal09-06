@@ -104,7 +104,6 @@ public class Pedido implements iABM {
                         sc.nextLine();
                     }
                 }catch (InputMismatchException e){
-                    Consola.escribir("Por favor ingrese solamente numeros: ");
                     while (!sc.hasNextInt()){
                         Consola.escribir("Por favor ingrese solamente numeros: ");
                         sc.next();

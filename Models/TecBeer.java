@@ -1,17 +1,24 @@
 package Models;
+import com.fasterxml.jackson.databind.JsonMappingException;
 
 import Enums.Estilos;
 import Excepciones.Invalido;
 import Models.Persona;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
 public class TecBeer <T>{
 
     private ArrayList<T> elementos;//ESTE ARRAYlist SERIA EL GENERAL DE TOOO Y A PARTIR DE ACA DERIVAR A HASHMAP O LO QUE SEA QUE QUERRAMOS TRABAJAR
+
     private Map<String, Persona> mapPersona;
+
     private Map<String, ArrayList<Cerveza>> mapCerveza;
+
     private TreeMap<Integer, Pedido> mapPedidos;
 
     public TecBeer() {
@@ -19,6 +26,18 @@ public class TecBeer <T>{
         this.mapPersona = new HashMap<>();
         this.mapCerveza = new HashMap<>();
         this.mapPedidos = new TreeMap<>();
+    }
+
+    public Map<String, Persona> getMapPersona() {
+        return mapPersona;
+    }
+
+    public Map<String, ArrayList<Cerveza>> getMapCerveza() {
+        return mapCerveza;
+    }
+
+    public TreeMap<Integer, Pedido> getMapPedidos() {
+        return mapPedidos;
     }
 
     //region LISTA GENERICA METODS
@@ -196,4 +215,38 @@ public class TecBeer <T>{
         }
         System.out.println("Costo total pedidos: "+costoTotalPedidos);
     }
+
+    public void mapPersonaToJSON(Map<String, Persona> mapPersona) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+            objectMapper.writeValue(new File("personas.json"), mapPersona);
+            Consola.escribir("Las personas se han guardado correctamente en el archivo JSON.");
+        } catch (IOException e) {
+            Consola.escribir("Error al guardar las personas en el archivo JSON: " + e.getMessage());
+        }
+    }
+
+    public void mapCervezaToJSON(Map<String, ArrayList<Cerveza>> mapCerveza) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+            objectMapper.writeValue(new File("productos.json"), mapCerveza);
+            Consola.escribir("Los productos se han guardado correctamente en el archivo JSON.");
+        } catch (IOException e) {
+            Consola.escribir("Error al guardar los productos en el archivo JSON: " + e.getMessage());
+        }
+    }
+
+    public void mapPedidosToJSON(TreeMap<Integer, Pedido> mapPedidos) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+            objectMapper.writeValue(new File("pedidos.json"), mapPedidos);
+            Consola.escribir("Los pedidos se han guardado correctamente en el archivo JSON.");
+        } catch (IOException e) {
+            Consola.escribir("Error al guardar los pedidos en el archivo JSON: " + e.getMessage());
+        }
+    }
+
 }

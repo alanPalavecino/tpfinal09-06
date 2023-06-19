@@ -24,7 +24,6 @@ public class Cerveza implements iABM{
     public Cerveza() {
         cont++;
         this.id = cont;
-        this.precio = tipo.getPrecio();
     }
 
     public Cerveza(String nombre, Estilos estilo, String marca, Tipo tipo, Integer stock) {
@@ -73,10 +72,6 @@ public class Cerveza implements iABM{
     public double getPrecio() {
         return precio;
     }
-//
-//    public void setPrecio(double precio) {
-//        this.precio = precio;
-//    }
 
     public Integer getStock() {
         return stock;

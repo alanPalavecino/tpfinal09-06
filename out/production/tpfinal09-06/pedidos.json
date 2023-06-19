@@ -1,0 +1,44 @@
+{
+  "1000" : {
+    "idPedido" : 1000,
+    "fecha" : "19-06-2023 18:58:29",
+    "cliente" : {
+      "nombre" : "Nazareno",
+      "apellido" : "Pisoni",
+      "username" : "Naza1991",
+      "password" : "NazaPisoni91!!",
+      "email" : "nazareno_pisoni@hotmail.com",
+      "genero" : "M",
+      "rol" : 0
+    },
+    "cervezas" : [ {
+      "id" : 45,
+      "nombre" : "A.P.A.",
+      "estilo" : "PALE_ALE",
+      "marca" : "Astor",
+      "tipo" : "BOTELLA",
+      "precio" : 50.0,
+      "stock" : 299,
+      "activo" : 1
+    }, {
+      "id" : 57,
+      "nombre" : "Carboheira",
+      "estilo" : "STOUT",
+      "marca" : "Kira",
+      "tipo" : "BARRIL_30",
+      "precio" : 1500.0,
+      "stock" : 299,
+      "activo" : 1
+    }, {
+      "id" : 95,
+      "nombre" : "N.E",
+      "estilo" : "NEW_ENGLAND_PALE_ALE",
+      "marca" : "Itzel Craft Beer",
+      "tipo" : "BOTELLA",
+      "precio" : 50.0,
+      "stock" : 298,
+      "activo" : 1
+    } ],
+    "costoPedido" : 100.0
+  }
+}

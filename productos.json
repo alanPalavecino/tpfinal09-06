@@ -1,0 +1,1714 @@
+{
+  "INDIAN_PALE_ALE" : [ {
+    "id" : 17,
+    "nombre" : "I.P.A.",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Escondido",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 18,
+    "nombre" : "I.P.A.",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Escondido",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 19,
+    "nombre" : "I.P.A.",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Escondido",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 20,
+    "nombre" : "I.P.A.",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Escondido",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 71,
+    "nombre" : "24.7",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Patagonia",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 72,
+    "nombre" : "24.7",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Patagonia",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 73,
+    "nombre" : "24.7",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Patagonia",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 74,
+    "nombre" : "24.7",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Patagonia",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 75,
+    "nombre" : "24.7",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Patagonia",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 16,
+    "nombre" : "I.P.A.",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Escondido",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 17,
+    "nombre" : "I.P.A.",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Escondido",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 18,
+    "nombre" : "I.P.A.",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Escondido",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 19,
+    "nombre" : "I.P.A.",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Escondido",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 20,
+    "nombre" : "I.P.A.",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Escondido",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 71,
+    "nombre" : "24.7",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Patagonia",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 72,
+    "nombre" : "24.7",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Patagonia",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 73,
+    "nombre" : "24.7",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Patagonia",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 74,
+    "nombre" : "24.7",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Patagonia",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 75,
+    "nombre" : "24.7",
+    "estilo" : "INDIAN_PALE_ALE",
+    "marca" : "Patagonia",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  } ],
+  "LAGER" : [ {
+    "id" : 12,
+    "nombre" : "Kolsch",
+    "estilo" : "LAGER",
+    "marca" : "Antares",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 13,
+    "nombre" : "Kolsch",
+    "estilo" : "LAGER",
+    "marca" : "Antares",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 14,
+    "nombre" : "Kolsch",
+    "estilo" : "LAGER",
+    "marca" : "Antares",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 15,
+    "nombre" : "Kolsch",
+    "estilo" : "LAGER",
+    "marca" : "Antares",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 11,
+    "nombre" : "Kolsch",
+    "estilo" : "LAGER",
+    "marca" : "Antares",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 12,
+    "nombre" : "Kolsch",
+    "estilo" : "LAGER",
+    "marca" : "Antares",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 13,
+    "nombre" : "Kolsch",
+    "estilo" : "LAGER",
+    "marca" : "Antares",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 14,
+    "nombre" : "Kolsch",
+    "estilo" : "LAGER",
+    "marca" : "Antares",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 15,
+    "nombre" : "Kolsch",
+    "estilo" : "LAGER",
+    "marca" : "Antares",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  } ],
+  "BELGIAN" : [ {
+    "id" : 22,
+    "nombre" : "Dubbel",
+    "estilo" : "BELGIAN",
+    "marca" : "Cheverry",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 23,
+    "nombre" : "Dubbel",
+    "estilo" : "BELGIAN",
+    "marca" : "Cheverry",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 24,
+    "nombre" : "Dubbel",
+    "estilo" : "BELGIAN",
+    "marca" : "Cheverry",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 25,
+    "nombre" : "Dubbel",
+    "estilo" : "BELGIAN",
+    "marca" : "Cheverry",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 51,
+    "nombre" : "Belgian Blonde",
+    "estilo" : "BELGIAN",
+    "marca" : "Leffe",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 52,
+    "nombre" : "Belgian Blonde",
+    "estilo" : "BELGIAN",
+    "marca" : "Leffe",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 53,
+    "nombre" : "Belgian Blonde",
+    "estilo" : "BELGIAN",
+    "marca" : "Leffe",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 54,
+    "nombre" : "Belgian Blonde",
+    "estilo" : "BELGIAN",
+    "marca" : "Leffe",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 55,
+    "nombre" : "Belgian Blonde",
+    "estilo" : "BELGIAN",
+    "marca" : "Leffe",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 21,
+    "nombre" : "Dubbel",
+    "estilo" : "BELGIAN",
+    "marca" : "Cheverry",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 22,
+    "nombre" : "Dubbel",
+    "estilo" : "BELGIAN",
+    "marca" : "Cheverry",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 23,
+    "nombre" : "Dubbel",
+    "estilo" : "BELGIAN",
+    "marca" : "Cheverry",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 24,
+    "nombre" : "Dubbel",
+    "estilo" : "BELGIAN",
+    "marca" : "Cheverry",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 25,
+    "nombre" : "Dubbel",
+    "estilo" : "BELGIAN",
+    "marca" : "Cheverry",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 51,
+    "nombre" : "Belgian Blonde",
+    "estilo" : "BELGIAN",
+    "marca" : "Leffe",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 52,
+    "nombre" : "Belgian Blonde",
+    "estilo" : "BELGIAN",
+    "marca" : "Leffe",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 53,
+    "nombre" : "Belgian Blonde",
+    "estilo" : "BELGIAN",
+    "marca" : "Leffe",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 54,
+    "nombre" : "Belgian Blonde",
+    "estilo" : "BELGIAN",
+    "marca" : "Leffe",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 55,
+    "nombre" : "Belgian Blonde",
+    "estilo" : "BELGIAN",
+    "marca" : "Leffe",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  } ],
+  "NEW_ENGLAND_PALE_ALE" : [ {
+    "id" : 27,
+    "nombre" : "Triple Neipa",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Sir Hopper",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 28,
+    "nombre" : "Triple Neipa",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Sir Hopper",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 29,
+    "nombre" : "Triple Neipa",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Sir Hopper",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 30,
+    "nombre" : "Triple Neipa",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Sir Hopper",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 91,
+    "nombre" : "N.E",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Itzel Craft Beer",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 92,
+    "nombre" : "N.E",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Itzel Craft Beer",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 93,
+    "nombre" : "N.E",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Itzel Craft Beer",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 94,
+    "nombre" : "N.E",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Itzel Craft Beer",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 95,
+    "nombre" : "N.E",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Itzel Craft Beer",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 26,
+    "nombre" : "Triple Neipa",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Sir Hopper",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 27,
+    "nombre" : "Triple Neipa",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Sir Hopper",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 28,
+    "nombre" : "Triple Neipa",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Sir Hopper",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 29,
+    "nombre" : "Triple Neipa",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Sir Hopper",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 30,
+    "nombre" : "Triple Neipa",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Sir Hopper",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 91,
+    "nombre" : "N.E",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Itzel Craft Beer",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 92,
+    "nombre" : "N.E",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Itzel Craft Beer",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 93,
+    "nombre" : "N.E",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Itzel Craft Beer",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 94,
+    "nombre" : "N.E",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Itzel Craft Beer",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 95,
+    "nombre" : "N.E",
+    "estilo" : "NEW_ENGLAND_PALE_ALE",
+    "marca" : "Itzel Craft Beer",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  } ],
+  "STOUT" : [ {
+    "id" : 57,
+    "nombre" : "Carboheira",
+    "estilo" : "STOUT",
+    "marca" : "Kira",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 58,
+    "nombre" : "Carboheira",
+    "estilo" : "STOUT",
+    "marca" : "Kira",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 59,
+    "nombre" : "Carboheira",
+    "estilo" : "STOUT",
+    "marca" : "Kira",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 60,
+    "nombre" : "Carboheira",
+    "estilo" : "STOUT",
+    "marca" : "Kira",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 56,
+    "nombre" : "Carboheira",
+    "estilo" : "STOUT",
+    "marca" : "Kira",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 57,
+    "nombre" : "Carboheira",
+    "estilo" : "STOUT",
+    "marca" : "Kira",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 58,
+    "nombre" : "Carboheira",
+    "estilo" : "STOUT",
+    "marca" : "Kira",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 59,
+    "nombre" : "Carboheira",
+    "estilo" : "STOUT",
+    "marca" : "Kira",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 60,
+    "nombre" : "Carboheira",
+    "estilo" : "STOUT",
+    "marca" : "Kira",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  } ],
+  "BARRICA" : [ {
+    "id" : 47,
+    "nombre" : "Petroleo",
+    "estilo" : "BARRICA",
+    "marca" : "Jabalina",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 48,
+    "nombre" : "Petroleo",
+    "estilo" : "BARRICA",
+    "marca" : "Jabalina",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 49,
+    "nombre" : "Petroleo",
+    "estilo" : "BARRICA",
+    "marca" : "Jabalina",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 50,
+    "nombre" : "Petroleo",
+    "estilo" : "BARRICA",
+    "marca" : "Jabalina",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 86,
+    "nombre" : "Barley Wine",
+    "estilo" : "BARRICA",
+    "marca" : "Borneo",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 87,
+    "nombre" : "Barley Wine",
+    "estilo" : "BARRICA",
+    "marca" : "Borneo",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 88,
+    "nombre" : "Barley Wine",
+    "estilo" : "BARRICA",
+    "marca" : "Borneo",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 89,
+    "nombre" : "Barley Wine",
+    "estilo" : "BARRICA",
+    "marca" : "Borneo",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 90,
+    "nombre" : "Barley Wine",
+    "estilo" : "BARRICA",
+    "marca" : "Borneo",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 46,
+    "nombre" : "Petroleo",
+    "estilo" : "BARRICA",
+    "marca" : "Jabalina",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 47,
+    "nombre" : "Petroleo",
+    "estilo" : "BARRICA",
+    "marca" : "Jabalina",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 48,
+    "nombre" : "Petroleo",
+    "estilo" : "BARRICA",
+    "marca" : "Jabalina",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 49,
+    "nombre" : "Petroleo",
+    "estilo" : "BARRICA",
+    "marca" : "Jabalina",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 50,
+    "nombre" : "Petroleo",
+    "estilo" : "BARRICA",
+    "marca" : "Jabalina",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 86,
+    "nombre" : "Barley Wine",
+    "estilo" : "BARRICA",
+    "marca" : "Borneo",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 87,
+    "nombre" : "Barley Wine",
+    "estilo" : "BARRICA",
+    "marca" : "Borneo",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 88,
+    "nombre" : "Barley Wine",
+    "estilo" : "BARRICA",
+    "marca" : "Borneo",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 89,
+    "nombre" : "Barley Wine",
+    "estilo" : "BARRICA",
+    "marca" : "Borneo",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 90,
+    "nombre" : "Barley Wine",
+    "estilo" : "BARRICA",
+    "marca" : "Borneo",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  } ],
+  "ALE" : [ {
+    "id" : 2,
+    "nombre" : "Porter",
+    "estilo" : "ALE",
+    "marca" : "Ogham",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 3,
+    "nombre" : "Porter",
+    "estilo" : "ALE",
+    "marca" : "Ogham",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 4,
+    "nombre" : "Porter",
+    "estilo" : "ALE",
+    "marca" : "Ogham",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 5,
+    "nombre" : "Porter",
+    "estilo" : "ALE",
+    "marca" : "Ogham",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 6,
+    "nombre" : "Golden Ale",
+    "estilo" : "ALE",
+    "marca" : "Brew House",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 7,
+    "nombre" : "Golden Ale",
+    "estilo" : "ALE",
+    "marca" : "Brew House",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 8,
+    "nombre" : "Golden Ale",
+    "estilo" : "ALE",
+    "marca" : "Brew House",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 9,
+    "nombre" : "Golden Ale",
+    "estilo" : "ALE",
+    "marca" : "Brew House",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 10,
+    "nombre" : "Golden Ale",
+    "estilo" : "ALE",
+    "marca" : "Brew House",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 76,
+    "nombre" : "Maldita Honey",
+    "estilo" : "ALE",
+    "marca" : "Baum",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 77,
+    "nombre" : "Maldita Honey",
+    "estilo" : "ALE",
+    "marca" : "Baum",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 78,
+    "nombre" : "Maldita Honey",
+    "estilo" : "ALE",
+    "marca" : "Baum",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 79,
+    "nombre" : "Maldita Honey",
+    "estilo" : "ALE",
+    "marca" : "Baum",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 80,
+    "nombre" : "Maldita Honey",
+    "estilo" : "ALE",
+    "marca" : "Baum",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 81,
+    "nombre" : "Amber Ale",
+    "estilo" : "ALE",
+    "marca" : "Gluck",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 82,
+    "nombre" : "Amber Ale",
+    "estilo" : "ALE",
+    "marca" : "Gluck",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 83,
+    "nombre" : "Amber Ale",
+    "estilo" : "ALE",
+    "marca" : "Gluck",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 84,
+    "nombre" : "Amber Ale",
+    "estilo" : "ALE",
+    "marca" : "Gluck",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 85,
+    "nombre" : "Amber Ale",
+    "estilo" : "ALE",
+    "marca" : "Gluck",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 96,
+    "nombre" : "Blonde Ale",
+    "estilo" : "ALE",
+    "marca" : "Gaia",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 97,
+    "nombre" : "Blonde Ale",
+    "estilo" : "ALE",
+    "marca" : "Gaia",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 98,
+    "nombre" : "Blonde Ale",
+    "estilo" : "ALE",
+    "marca" : "Gaia",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 99,
+    "nombre" : "Blonde Ale",
+    "estilo" : "ALE",
+    "marca" : "Gaia",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 100,
+    "nombre" : "Blonde Ale",
+    "estilo" : "ALE",
+    "marca" : "Gaia",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 1,
+    "nombre" : "Porter",
+    "estilo" : "ALE",
+    "marca" : "Ogham",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 2,
+    "nombre" : "Porter",
+    "estilo" : "ALE",
+    "marca" : "Ogham",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 3,
+    "nombre" : "Porter",
+    "estilo" : "ALE",
+    "marca" : "Ogham",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 4,
+    "nombre" : "Porter",
+    "estilo" : "ALE",
+    "marca" : "Ogham",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 5,
+    "nombre" : "Porter",
+    "estilo" : "ALE",
+    "marca" : "Ogham",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 6,
+    "nombre" : "Golden Ale",
+    "estilo" : "ALE",
+    "marca" : "Brew House",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 7,
+    "nombre" : "Golden Ale",
+    "estilo" : "ALE",
+    "marca" : "Brew House",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 8,
+    "nombre" : "Golden Ale",
+    "estilo" : "ALE",
+    "marca" : "Brew House",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 9,
+    "nombre" : "Golden Ale",
+    "estilo" : "ALE",
+    "marca" : "Brew House",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 10,
+    "nombre" : "Golden Ale",
+    "estilo" : "ALE",
+    "marca" : "Brew House",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 76,
+    "nombre" : "Maldita Honey",
+    "estilo" : "ALE",
+    "marca" : "Baum",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 77,
+    "nombre" : "Maldita Honey",
+    "estilo" : "ALE",
+    "marca" : "Baum",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 78,
+    "nombre" : "Maldita Honey",
+    "estilo" : "ALE",
+    "marca" : "Baum",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 79,
+    "nombre" : "Maldita Honey",
+    "estilo" : "ALE",
+    "marca" : "Baum",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 80,
+    "nombre" : "Maldita Honey",
+    "estilo" : "ALE",
+    "marca" : "Baum",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 81,
+    "nombre" : "Amber Ale",
+    "estilo" : "ALE",
+    "marca" : "Gluck",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 82,
+    "nombre" : "Amber Ale",
+    "estilo" : "ALE",
+    "marca" : "Gluck",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 83,
+    "nombre" : "Amber Ale",
+    "estilo" : "ALE",
+    "marca" : "Gluck",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 84,
+    "nombre" : "Amber Ale",
+    "estilo" : "ALE",
+    "marca" : "Gluck",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 85,
+    "nombre" : "Amber Ale",
+    "estilo" : "ALE",
+    "marca" : "Gluck",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 96,
+    "nombre" : "Blonde Ale",
+    "estilo" : "ALE",
+    "marca" : "Gaia",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 97,
+    "nombre" : "Blonde Ale",
+    "estilo" : "ALE",
+    "marca" : "Gaia",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 98,
+    "nombre" : "Blonde Ale",
+    "estilo" : "ALE",
+    "marca" : "Gaia",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 99,
+    "nombre" : "Blonde Ale",
+    "estilo" : "ALE",
+    "marca" : "Gaia",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 100,
+    "nombre" : "Blonde Ale",
+    "estilo" : "ALE",
+    "marca" : "Gaia",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  } ],
+  "ENGLAND_PALE_ALE" : [ {
+    "id" : 32,
+    "nombre" : "Citra a Ciegas",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Strange Brewing",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 33,
+    "nombre" : "Citra a Ciegas",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Strange Brewing",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 34,
+    "nombre" : "Citra a Ciegas",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Strange Brewing",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 35,
+    "nombre" : "Citra a Ciegas",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Strange Brewing",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 61,
+    "nombre" : "England Pale",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Dogfish Head",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 62,
+    "nombre" : "England Pale",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Dogfish Head",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 63,
+    "nombre" : "England Pale",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Dogfish Head",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 64,
+    "nombre" : "England Pale",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Dogfish Head",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 65,
+    "nombre" : "England Pale",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Dogfish Head",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 31,
+    "nombre" : "Citra a Ciegas",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Strange Brewing",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 32,
+    "nombre" : "Citra a Ciegas",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Strange Brewing",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 33,
+    "nombre" : "Citra a Ciegas",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Strange Brewing",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 34,
+    "nombre" : "Citra a Ciegas",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Strange Brewing",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 35,
+    "nombre" : "Citra a Ciegas",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Strange Brewing",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 61,
+    "nombre" : "England Pale",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Dogfish Head",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 62,
+    "nombre" : "England Pale",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Dogfish Head",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 63,
+    "nombre" : "England Pale",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Dogfish Head",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 64,
+    "nombre" : "England Pale",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Dogfish Head",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 65,
+    "nombre" : "England Pale",
+    "estilo" : "ENGLAND_PALE_ALE",
+    "marca" : "Dogfish Head",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  } ],
+  "IMPERIAL_STOUT" : [ {
+    "id" : 67,
+    "nombre" : "Imperial Stout",
+    "estilo" : "IMPERIAL_STOUT",
+    "marca" : "Sierra Nevada",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 68,
+    "nombre" : "Imperial Stout",
+    "estilo" : "IMPERIAL_STOUT",
+    "marca" : "Sierra Nevada",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 69,
+    "nombre" : "Imperial Stout",
+    "estilo" : "IMPERIAL_STOUT",
+    "marca" : "Sierra Nevada",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 70,
+    "nombre" : "Imperial Stout",
+    "estilo" : "IMPERIAL_STOUT",
+    "marca" : "Sierra Nevada",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 66,
+    "nombre" : "Imperial Stout",
+    "estilo" : "IMPERIAL_STOUT",
+    "marca" : "Sierra Nevada",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 67,
+    "nombre" : "Imperial Stout",
+    "estilo" : "IMPERIAL_STOUT",
+    "marca" : "Sierra Nevada",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 68,
+    "nombre" : "Imperial Stout",
+    "estilo" : "IMPERIAL_STOUT",
+    "marca" : "Sierra Nevada",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 69,
+    "nombre" : "Imperial Stout",
+    "estilo" : "IMPERIAL_STOUT",
+    "marca" : "Sierra Nevada",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 70,
+    "nombre" : "Imperial Stout",
+    "estilo" : "IMPERIAL_STOUT",
+    "marca" : "Sierra Nevada",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  } ],
+  "PALE_ALE" : [ {
+    "id" : 42,
+    "nombre" : "A.P.A.",
+    "estilo" : "PALE_ALE",
+    "marca" : "Astor",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 43,
+    "nombre" : "A.P.A.",
+    "estilo" : "PALE_ALE",
+    "marca" : "Astor",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 44,
+    "nombre" : "A.P.A.",
+    "estilo" : "PALE_ALE",
+    "marca" : "Astor",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 45,
+    "nombre" : "A.P.A.",
+    "estilo" : "PALE_ALE",
+    "marca" : "Astor",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 41,
+    "nombre" : "A.P.A.",
+    "estilo" : "PALE_ALE",
+    "marca" : "Astor",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 42,
+    "nombre" : "A.P.A.",
+    "estilo" : "PALE_ALE",
+    "marca" : "Astor",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 43,
+    "nombre" : "A.P.A.",
+    "estilo" : "PALE_ALE",
+    "marca" : "Astor",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 44,
+    "nombre" : "A.P.A.",
+    "estilo" : "PALE_ALE",
+    "marca" : "Astor",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 45,
+    "nombre" : "A.P.A.",
+    "estilo" : "PALE_ALE",
+    "marca" : "Astor",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  } ],
+  "SOUR" : [ {
+    "id" : 37,
+    "nombre" : "Flanders Red",
+    "estilo" : "SOUR",
+    "marca" : "Juguetes Perdidos",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 38,
+    "nombre" : "Flanders Red",
+    "estilo" : "SOUR",
+    "marca" : "Juguetes Perdidos",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 39,
+    "nombre" : "Flanders Red",
+    "estilo" : "SOUR",
+    "marca" : "Juguetes Perdidos",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 40,
+    "nombre" : "Flanders Red",
+    "estilo" : "SOUR",
+    "marca" : "Juguetes Perdidos",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 36,
+    "nombre" : "Flanders Red",
+    "estilo" : "SOUR",
+    "marca" : "Juguetes Perdidos",
+    "tipo" : "BARRIL_20",
+    "precio" : 1000.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 37,
+    "nombre" : "Flanders Red",
+    "estilo" : "SOUR",
+    "marca" : "Juguetes Perdidos",
+    "tipo" : "BARRIL_30",
+    "precio" : 1500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 38,
+    "nombre" : "Flanders Red",
+    "estilo" : "SOUR",
+    "marca" : "Juguetes Perdidos",
+    "tipo" : "BARRIL_50",
+    "precio" : 2500.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 39,
+    "nombre" : "Flanders Red",
+    "estilo" : "SOUR",
+    "marca" : "Juguetes Perdidos",
+    "tipo" : "LATA",
+    "precio" : 25.0,
+    "stock" : 300,
+    "activo" : 1
+  }, {
+    "id" : 40,
+    "nombre" : "Flanders Red",
+    "estilo" : "SOUR",
+    "marca" : "Juguetes Perdidos",
+    "tipo" : "BOTELLA",
+    "precio" : 50.0,
+    "stock" : 300,
+    "activo" : 1
+  } ]
+}

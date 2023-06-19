@@ -130,7 +130,7 @@ public class Menu {
     //endregion
 
     //region ADMIN
-    public static void subMenuAdmin(TecBeer sistema) throws IOException {
+    public static void subMenuAdmin(TecBeer sistema) {
         int opcion = -1;
         do{
             do{
@@ -156,7 +156,7 @@ public class Menu {
                 case 4:
                     break;
                 case 5:
-                    //subMenuArchivos(sistema);
+                    subMenuArchivos(sistema);
                     break;
                 case 0:
                     break;
@@ -527,38 +527,42 @@ public class Menu {
     //endregion
 
     //region ARCHIVOS
-    /*
-    public static void subMenuArchivos(TecBeer sistema) throws IOException {
+
+    public static void subMenuArchivos(TecBeer sistema){
+        Scanner sc = new Scanner(System.in);
         int opcion = -1;
         do{
             do{
-                Consola.escribir("1.Archivo clientes");
-                Consola.escribir("2.Archivo productos");
-                Consola.escribir("3.Archivo cabecera"); //ARCHIVO CABECERA Y DETALLE NO LOS UTILIZAMOS.
-                Consola.escribir("4.Archivo detalle");
+                Consola.escribir("1.Guardar clientes en archivo JSON");
+                Consola.escribir("2.Guardar productos en archivo JSON");
+                Consola.escribir("3.Guardar pedidos en archivo JSON");
                 Consola.escribir("0.Salir");
                 opcion=Consola.leerInt("Seleccione una opcion <!>");
-            }while(opcion<0||opcion>4);
+            }while(opcion<0||opcion>3);
 
             switch (opcion){
                 case 1:
-                    /*ArrayList<Persona> arrayPersonas = new ArrayList<>();
-                    arrayPersonas = Archivo.leerArchivoYDevolverPersonas();
-                    for(Persona persona:arrayPersonas){
-                        System.out.println(persona.toString());
-                    }
-                    Archivo.leerArchivoYDevolverPersonas();
+                    sistema.mapPersonaToJSON(sistema.getMapPersona());
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 2:
+                    sistema.mapCervezaToJSON(sistema.getMapCerveza());
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 3:
-                    break;
-                case 4:
+                    sistema.mapPedidosToJSON(sistema.getMapPedidos());
+                    Consola.escribir("Presione cualquier tecla para continuar");
+                    sc.nextLine();
                     break;
                 case 0:
                     break;
             }
         }while(opcion!=0);
-    }*/
+
+    }
+
+
     //endregion
 }
