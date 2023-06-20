@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Pedido implements iABM {
 
 
-    private static int cont= 999;
+    private static int cont= 1100;
     private int idPedido;
     private String fecha;
     private Cliente cliente;

@@ -1,14 +1,21 @@
 package Models;
-import com.fasterxml.jackson.databind.JsonMappingException;
 
 import Enums.Estilos;
 import Excepciones.Invalido;
 import Models.Persona;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
+
+
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.*;
 
 public class TecBeer <T>{
@@ -123,6 +130,24 @@ public class TecBeer <T>{
         }
     }
 
+    public void arrayListToMapPersona(){
+        for(Object objeto : elementos){
+            if(objeto instanceof Persona){
+                Persona persona = (Persona) objeto;
+
+                try {
+                    if(!mapPersona.containsKey(persona.getUsername())){
+                        mapPersona.put(persona.getUsername(), persona);
+                    }else {
+                        throw new Invalido("La persona ya existe en el sistema");
+                    }
+                }catch (Exception e){
+                    Consola.escribir(e.getMessage());
+                }
+            }
+        }
+    }
+
     public void arrayListToMapCerveza(){
         for(Object objeto : elementos){
             if(objeto instanceof Cerveza){
@@ -133,6 +158,24 @@ public class TecBeer <T>{
                     mapCerveza.put(estilo, new ArrayList<>());
                 }else {
                     mapCerveza.get(estilo).add(cerveza);
+                }
+            }
+        }
+    }
+
+    public void arrayListToMapPedidos(){
+        for(Object objeto : elementos){
+            if(objeto instanceof Pedido){
+                Pedido pedido = (Pedido) objeto;
+
+                try {
+                    if(!mapPedidos.containsKey(pedido.getIdPedido())){
+                        mapPedidos.put(pedido.getIdPedido(), pedido);
+                    }else {
+                        throw new Invalido("El pedido ya existe en el sistema");
+                    }
+                }catch (Exception e){
+                    Consola.escribir(e.getMessage());
                 }
             }
         }
@@ -248,5 +291,96 @@ public class TecBeer <T>{
             Consola.escribir("Error al guardar los pedidos en el archivo JSON: " + e.getMessage());
         }
     }
+
+    public ArrayList<Admin> jsonToAdminsArray(String archivo) {
+        ArrayList<Admin> listaAdmins = new ArrayList<>();
+
+        try {
+            Gson gson = new Gson();
+            JsonObject jsonObject = gson.fromJson(new FileReader(archivo), JsonObject.class);
+
+            for (Map.Entry<String, JsonElement> entry : jsonObject.entrySet()) {
+                String key = entry.getKey();
+                JsonObject personaJson = entry.getValue().getAsJsonObject();
+                int rol = personaJson.get("rol").getAsInt();
+
+                if (rol == 1) {
+                    Admin admin = gson.fromJson(personaJson, Admin.class);
+                    listaAdmins.add(admin);
+                }
+            }
+
+        } catch (IOException e) {
+            Consola.escribir("Error al leer el archivo JSON de admins: " + e.getMessage());
+        }
+
+        return listaAdmins;
+    }
+
+    public ArrayList<Cliente> jsonToClientesArray(String archivo) {
+        ArrayList<Cliente> listaClientes = new ArrayList<>();
+
+        try {
+            Gson gson = new Gson();
+            JsonObject jsonObject = gson.fromJson(new FileReader(archivo), JsonObject.class);
+
+            for (Map.Entry<String, JsonElement> entry : jsonObject.entrySet()) {
+                String key = entry.getKey();
+                JsonObject personaJson = entry.getValue().getAsJsonObject();
+                int rol = personaJson.get("rol").getAsInt();
+
+                if (rol == 0) {
+                    Cliente cliente = gson.fromJson(personaJson, Cliente.class);
+                    listaClientes.add(cliente);
+                }
+            }
+
+        } catch (IOException e) {
+            Consola.escribir("Error al leer el archivo JSON de clientes: " + e.getMessage());
+        }
+
+        return listaClientes;
+    }
+
+    public ArrayList<Cerveza> jsonToProductosArray(String archivo) {
+        ArrayList<Cerveza> cervezas = new ArrayList<>();
+        try {
+            Gson gson = new Gson();
+
+            File file = new File(archivo);
+            FileReader reader = new FileReader(file);
+
+            Type tipoMapa = new TypeToken<Map<String, ArrayList<Cerveza>>>() {}.getType();
+            Map<String, ArrayList<Cerveza>> mapa = gson.fromJson(reader, tipoMapa);
+
+            for (ArrayList<Cerveza> lista : mapa.values()) {
+                cervezas.addAll(lista);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return cervezas;
+    }
+
+    public ArrayList<Pedido> jsonToPedidosArray(String archivo) {
+        ArrayList<Pedido> listaPedidos = new ArrayList<>();
+
+        try {
+            Gson gson = new Gson();
+            FileReader fileReader = new FileReader(archivo);
+            Type tipoMapa = new TypeToken<Map<Integer, Pedido>>() {
+            }.getType();
+            Map<Integer, Pedido> mapaPedidos = gson.fromJson(fileReader, tipoMapa);
+            listaPedidos.addAll(mapaPedidos.values());
+
+            fileReader.close();
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo JSON: " + e.getMessage());
+        }
+
+        return listaPedidos;
+    }
+
 
 }

@@ -17,6 +17,8 @@ public class Menu {
         //HAY QUE TRAER TODOS LOS CLIENTES DESDE ARCHIVOS CON SUS PEDIDOS Y LOS PRODUCTOS DEL PEDIDO
 
         sistema.arrayListToMapCerveza();
+        sistema.arrayListToMapPersona();
+        sistema.arrayListToMapPedidos();
         int opcion = -1;
         do{
             do{
