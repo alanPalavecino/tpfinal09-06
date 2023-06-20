@@ -328,7 +328,7 @@ public class TecBeer <T>{
         double costoTotalPedidos=0.0;
         for(Map.Entry<Integer, Pedido> entry : mapPedidos.entrySet()){
             if(entry.getValue().getCliente().equals(cliente)){
-                Consola.escribir(entry.getValue().toString());
+                Consola.escribir(entry.getValue().toStringCliente());
                 costoTotalPedidos+=entry.getValue().getCostoPedido();
             }
         }
@@ -355,7 +355,7 @@ public class TecBeer <T>{
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             objectMapper.writeValue(new File("personas.json"), mapPersona);
-            Consola.escribir("Las personas se han guardado correctamente en el archivo JSON.");
+            //Consola.escribir("Las personas se han guardado correctamente en el archivo JSON.");
         } catch (IOException e) {
             Consola.escribir("Error al guardar las personas en el archivo JSON: " + e.getMessage());
         }
@@ -366,7 +366,7 @@ public class TecBeer <T>{
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             objectMapper.writeValue(new File("personasInactivas.json"), mapPersona);
-            Consola.escribir("Las personas inactivas se han guardado correctamente en el archivo JSON.");
+            //Consola.escribir("Las personas inactivas se han guardado correctamente en el archivo JSON.");
         } catch (IOException e) {
             Consola.escribir("Error al guardar las personas en el archivo JSON: " + e.getMessage());
         }
@@ -377,7 +377,7 @@ public class TecBeer <T>{
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             objectMapper.writeValue(new File("productos.json"), mapCerveza);
-            Consola.escribir("Los productos se han guardado correctamente en el archivo JSON.");
+            //Consola.escribir("Los productos se han guardado correctamente en el archivo JSON.");
         } catch (IOException e) {
             Consola.escribir("Error al guardar los productos en el archivo JSON: " + e.getMessage());
         }
@@ -388,7 +388,7 @@ public class TecBeer <T>{
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             objectMapper.writeValue(new File("pedidos.json"), mapPedidos);
-            Consola.escribir("Los pedidos se han guardado correctamente en el archivo JSON.");
+            //Consola.escribir("Los pedidos se han guardado correctamente en el archivo JSON.");
         } catch (IOException e) {
             Consola.escribir("Error al guardar los pedidos en el archivo JSON: " + e.getMessage());
         }

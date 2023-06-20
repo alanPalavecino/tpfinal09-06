@@ -73,7 +73,7 @@ public class Pedido implements iABM {
         return "\nPedido{" +
                 "idPedido=" + idPedido +
                 ", fecha='" + fecha + '\'' +
-                ", cliente=" + cliente.getId() +
+                ", cliente=" + cliente.getNombre() +
                 ", cervezas=" + cervezas +
                 ", costoPedido=" + costoPedido +
                 '}';
