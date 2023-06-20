@@ -39,6 +39,7 @@ public class Menu {
                     registrarse(sistema);
                     break;
                 case 0:
+                    sistema.guardarSistema();
                     Consola.escribir("Saliendo del sistema <!>");
                     break;
             }
@@ -54,8 +55,6 @@ public class Menu {
         Persona personaAux;
         Consola.limpiar();
 
-
-        //VERIFICO QUE EL USERNAME Y LA PASSWORD SEAN CORRECTAS
         try {
             String guardaUser = Consola.leerString("Ingrese usuario: ");
             boolean flagUsuario = sistema.verificarUsuario(guardaUser);
@@ -227,7 +226,7 @@ public class Menu {
                     Consola.limpiar();
                     break;
                 case 2:
-                    Pedido pedido = new Pedido(cliente);
+                    Pedido pedido = new Pedido(cliente, sistema);
                     pedido.alta(sistema);
                     sistema.addToMapPedidos(pedido);
                     break;
@@ -281,6 +280,7 @@ public class Menu {
                     sistema.verTodosLosClientes();
                     Consola.escribir("Presione cualquier tecla para continuar <>");
                     sc.nextLine();
+                    sc.nextLine();
                     break;
                 case 3:
                     Cliente cliente = new Cliente();
@@ -288,6 +288,7 @@ public class Menu {
                     sistema.addToMapPersona(cliente);
                     Consola.escribir("ALTA EXITOSA!");
                     Consola.escribir("Presione cualquier tecla para continuar <>");
+                    sc.nextLine();
                     sc.nextLine();
                     break;
                 case 4:
@@ -317,16 +318,18 @@ public class Menu {
                     }
                     break;
                 case 6:
+                    Consola.limpiar();
                     try{
                         String guardaUser = Consola.leerString("Ingrese el userName del cliente a activar");
                         boolean flag = sistema.verificarUsuarioInactivo(guardaUser);
                         if(flag == false){
                             throw new Invalido("El usuario no se encuentra en la base de datos o esta activo <!>");
                         }else{
-                            Persona aux = sistema.devolverPersonaPorUserName(guardaUser);
+                            Persona aux = sistema.devolverPersonaInactivaPorUserName(guardaUser);
                             aux.setActivo(1);
                             sistema.addToMapPersona(aux);
                             System.out.println("SE ACTIVO EL CLIENTE!");
+                            sc.nextLine();
                         }
                     }catch (Invalido e){
                         System.out.println(e.getMessage());
@@ -557,42 +560,7 @@ public class Menu {
     //region ARCHIVOS
 
     public static void subMenuArchivos(TecBeer sistema){
-        Scanner sc = new Scanner(System.in);
-        int opcion = -1;
-        do{
-            do{
-                Consola.escribir("1.Guardar clientes en archivo JSON");
-                Consola.escribir("2.Guardar productos en archivo JSON");
-                Consola.escribir("3.Guardar pedidos en archivo JSON");
-                Consola.escribir("4.Ver archivos");
-                Consola.escribir("0.Salir");
-                opcion=Consola.leerInt("Seleccione una opcion <!>");
-            }while(opcion<0||opcion>3);
-
-            switch (opcion){
-                case 1:
-                    sistema.mapPersonaToJSON(sistema.getMapPersona());
-                    Consola.escribir("Presione cualquier tecla para continuar");
-                    sc.nextLine();
-                    break;
-                case 2:
-                    sistema.mapCervezaToJSON(sistema.getMapCerveza());
-                    Consola.escribir("Presione cualquier tecla para continuar");
-                    sc.nextLine();
-                    break;
-                case 3:
-                    sistema.mapPedidosToJSON(sistema.getMapPedidos());
-                    Consola.escribir("Presione cualquier tecla para continuar");
-                    sc.nextLine();
-                    break;
-                case 4:
-                    subMenuVerArchivo(sistema);
-                    break;
-                case 0:
-                    break;
-            }
-        }while(opcion!=0);
-
+        subMenuVerArchivo(sistema);
     }
 
     public static void subMenuVerArchivo(TecBeer sistema){

@@ -13,15 +13,14 @@ import java.util.Scanner;
 
 public class Pedido implements iABM {
 
-
-    private static int cont= 1100;
     private int idPedido;
     private String fecha;
     private Cliente cliente;
     private ArrayList<Cerveza> cervezas;
     private double costoPedido;
 
-    public Pedido(Cliente cliente) {
+    public Pedido(Cliente cliente, TecBeer sistema) {
+        int cont = sistema.ultimoIdMapPedidos();
         cont++;
         this.idPedido = cont;
         this.cliente = cliente;
@@ -71,13 +70,21 @@ public class Pedido implements iABM {
 
     @Override
     public String toString() {
-        return "Pedido{" +
+        return "\nPedido{" +
                 "idPedido=" + idPedido +
                 ", fecha='" + fecha + '\'' +
-                ", cliente=" + cliente.getUsername() +
+                ", cliente=" + cliente.getId() +
                 ", cervezas=" + cervezas +
                 ", costoPedido=" + costoPedido +
                 '}';
+    }
+
+    public String toStringCliente(){
+        return "Pedido: "+
+                "FECHA: "+fecha +'\''+
+                ", CLIENTE: "+cliente.getUsername()+
+                ", CERVEZAS: "+cervezas+
+                ", COSTO PEDIDO: "+costoPedido;
     }
 
     public void alta(TecBeer sistema){
@@ -128,7 +135,7 @@ public class Pedido implements iABM {
                         if(sistema.devolverProductoPorId(idIngresado).getStock() > cantidad){
                             cervezas.add(sistema.devolverProductoPorId(idIngresado));
 
-                            costoPedido=sistema.devolverProductoPorId(idIngresado).getPrecio()*cantidad;
+                            costoPedido+=sistema.devolverProductoPorId(idIngresado).getPrecio()*cantidad;
 
                             int stockActual = sistema.devolverProductoPorId(idIngresado).getStock();
                             sistema.devolverProductoPorId(idIngresado).setStock(stockActual - cantidad);

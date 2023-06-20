@@ -14,8 +14,8 @@ public class Cliente extends Persona implements iABM {
     public Cliente() {
     }
 
-    public Cliente(String nombre, String apellido, String username, String password, String email, char genero) {
-        super(nombre, apellido, username, password, email, genero, 0);
+    public Cliente(String nombre, String apellido, String username, String password, String email, char genero, int activo) {
+        super(nombre, apellido, username, password, email, genero, 0, activo);
     }
     @Override
     public void alta(TecBeer sistema) {
@@ -102,17 +102,18 @@ public class Cliente extends Persona implements iABM {
         int opcion = 0;
         do{
             Consola.escribir("Qué desea modificar?");
-            Consola.escribir("1- Nombre ");
-            Consola.escribir("2- Apellido ");
-            Consola.escribir("3- Username ");
-            Consola.escribir("4- Password ");
-            Consola.escribir("5- Email ");
+            Consola.escribir("1.Nombre ");
+            Consola.escribir("2.Apellido ");
+            Consola.escribir("3.Username ");
+            Consola.escribir("4.Password ");
+            Consola.escribir("5.Email ");
+            Consola.escribir("0.Salir ");
             try{
                 opcion = Consola.leerInt("Ingrese la opción que desea modificar: ");
             }catch (InputMismatchException e){
                 Consola.escribir("Opción inválida. Debe ingresar solamente números");
             }
-        }while (opcion < 1 || opcion > 5);
+        }while (opcion < 0 || opcion > 5);
 
         switch (opcion) {
             case 1:
@@ -153,8 +154,10 @@ public class Cliente extends Persona implements iABM {
                     matcher = pattern.matcher(getEmail());
                 }
                 break;
-            default:
+            case 0:
                 break;
         }
     }
+
+
 }

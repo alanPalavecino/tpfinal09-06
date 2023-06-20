@@ -39,6 +39,10 @@ public class TecBeer <T>{
         return mapPersona;
     }
 
+    public Map<String, Persona> getMapPersonaInactivas() {
+        return mapPersonaInactivas;
+    }
+
     public Map<String, ArrayList<Cerveza>> getMapCerveza() {
         return mapCerveza;
     }
@@ -107,6 +111,23 @@ public class TecBeer <T>{
         return aux;
     }
 
+    public Persona devolverPersonaInactivaPorUserName(String username){
+        Persona aux = null;
+        for(Map.Entry<String, Persona> entry:mapPersonaInactivas.entrySet()){
+            if(entry.getValue() instanceof Admin){
+                if(entry.getValue().getUsername().equals(username)){
+                    aux = entry.getValue();
+                }
+            }else if(entry.getValue() instanceof Cliente){
+                if(entry.getValue().getUsername().equals(username)){
+                    aux = entry.getValue();
+                }
+            }
+
+        }
+        return aux;
+    }
+
     public void removeToMapPersona(Persona persona) {mapPersona.remove(persona.getUsername());}
 
     public void removeToMapPersonaInactivo(Persona persona) {mapPersonaInactivas.remove(persona.getUsername());}
@@ -154,7 +175,9 @@ public class TecBeer <T>{
         }
     }
 
-    public void arrayListToMapPersona(){
+
+    //ESTA FUNCION ESTA DE MAS YA VENIAMOS USANDO OTRA
+    /*public void arrayListToMapPersona(){
         for(Object objeto : elementos){
             if(objeto instanceof Persona){
                 Persona persona = (Persona) objeto;
@@ -165,12 +188,12 @@ public class TecBeer <T>{
                     }else {
                         throw new Invalido("La persona ya existe en el sistema");
                     }
-                }catch (Exception e){
+                }catch (Invalido e){
                     Consola.escribir(e.getMessage());
                 }
             }
         }
-    }
+    }*/
 
     public void arrayListToMapCerveza(){
         for(Object objeto : elementos){
@@ -192,18 +215,21 @@ public class TecBeer <T>{
             if(objeto instanceof Pedido){
                 Pedido pedido = (Pedido) objeto;
 
-                try {
+                //try {
                     if(!mapPedidos.containsKey(pedido.getIdPedido())){
                         mapPedidos.put(pedido.getIdPedido(), pedido);
-                    }else {
-                        throw new Invalido("El pedido ya existe en el sistema");
-                    }
-                }catch (Exception e){
-                    Consola.escribir(e.getMessage());
+                    }//else {
+
+                        //throw new Invalido("El pedido ya existe en el sistema");
+                    //}
+                //}catch (Invalido e){
+                    //Consola.escribir(e.getMessage());
                 }
             }
         }
-    }
+    //}
+
+
 
     public void addToMapCerveza(Cerveza nuevaCerveza){mapCerveza.get(nuevaCerveza.getEstilo()).add(nuevaCerveza);}
 
@@ -272,7 +298,7 @@ public class TecBeer <T>{
         if(!mapPedidos.isEmpty()){
             lista ="";
             for(Map.Entry<Integer, Pedido> entry : mapPedidos.entrySet()){
-                lista+=entry.getValue().toString()+"\n";
+                lista+=entry.getValue().toString();
             }
         }
         return lista;
@@ -330,6 +356,17 @@ public class TecBeer <T>{
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             objectMapper.writeValue(new File("personas.json"), mapPersona);
             Consola.escribir("Las personas se han guardado correctamente en el archivo JSON.");
+        } catch (IOException e) {
+            Consola.escribir("Error al guardar las personas en el archivo JSON: " + e.getMessage());
+        }
+    }
+
+    public void mapPersonaInactivasToJSON(Map<String, Persona> mapPersona) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+            objectMapper.writeValue(new File("personasInactivas.json"), mapPersona);
+            Consola.escribir("Las personas inactivas se han guardado correctamente en el archivo JSON.");
         } catch (IOException e) {
             Consola.escribir("Error al guardar las personas en el archivo JSON: " + e.getMessage());
         }
@@ -493,6 +530,17 @@ public class TecBeer <T>{
         }
 
 
+    }
+
+    public int ultimoIdMapPedidos(){
+        return mapPedidos.lastEntry().getKey();
+    }
+
+    public void guardarSistema(){
+        mapCervezaToJSON(getMapCerveza());
+        mapPersonaToJSON(getMapPersona());
+        mapPersonaInactivasToJSON(getMapPersonaInactivas());
+        mapPedidosToJSON(getMapPedidos());
     }
 
 

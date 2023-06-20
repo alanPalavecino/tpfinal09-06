@@ -13,8 +13,8 @@ public class Admin extends Persona implements iABM {
     public Admin() {
     }
 
-    public Admin(String nombre, String apellido, String username, String password, String email, char genero) {
-        super(nombre, apellido, username, password, email, genero, 1);
+    public Admin(String nombre, String apellido, String username, String password, String email, char genero, int activo) {
+        super(nombre, apellido, username, password, email, genero, 1, activo);
     }
 
     @Override

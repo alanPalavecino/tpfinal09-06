@@ -25,10 +25,9 @@ public abstract class Persona implements Serializable {
     public Persona() {
         cont++;
         this.id = cont;
-        this.activo = 1;
     }
 
-    public Persona(String nombre, String apellido, String username, String password, String email, char genero, int rol) {
+    public Persona(String nombre, String apellido, String username, String password, String email, char genero, int rol, int activo) {
         cont++;
         this.id = cont;
         this.nombre = nombre;
@@ -38,7 +37,11 @@ public abstract class Persona implements Serializable {
         this.email = email;
         this.genero = genero;
         this.rol = rol;
-        this.activo = 1;
+        this.activo = activo;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNombre() {

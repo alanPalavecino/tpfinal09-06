@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws IOException, Invalido {
@@ -23,11 +24,18 @@ public class Main {
 
         ArrayList<Admin> listaAdmins = sistema.jsonToAdminsArray("personas.json");
         for (Admin admin : listaAdmins) {
+            admin.setActivo(1);
             sistema.addElementoToArrayList(admin);
         }
 
         ArrayList<Cliente> listaClientes = sistema.jsonToClientesArray("personas.json");
         for (Cliente cliente : listaClientes) {
+            cliente.setActivo(1);
+            sistema.addElementoToArrayList(cliente);
+        }
+
+        ArrayList<Cliente> listaClientesInactivos = sistema.jsonToClientesArray("personasInactivas.json");
+        for (Cliente cliente : listaClientesInactivos) {
             sistema.addElementoToArrayList(cliente);
         }
 
@@ -40,6 +48,13 @@ public class Main {
         for(Pedido pedido : listaPedidos){
             sistema.addElementoToArrayList(pedido);
         }
+
+        /*System.out.println(sistema.listarElementos());
+
+        sistema.activarSistema();
+        System.out.println(sistema.verTodosLosPedidos());
+
+        System.out.println(sistema.ultimoIdMapPedidos());*/
 
         Menu.menuGeneral(sistema);
     }
