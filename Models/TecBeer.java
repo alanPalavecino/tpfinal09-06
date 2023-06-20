@@ -3,6 +3,7 @@ package Models;
 import Enums.Estilos;
 import Excepciones.Invalido;
 import Models.Persona;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.google.gson.Gson;
@@ -20,17 +21,16 @@ import java.util.*;
 
 public class TecBeer <T>{
 
-    private ArrayList<T> elementos;//ESTE ARRAYlist SERIA EL GENERAL DE TOOO Y A PARTIR DE ACA DERIVAR A HASHMAP O LO QUE SEA QUE QUERRAMOS TRABAJAR
-
+    private ArrayList<T> elementos;
     private Map<String, Persona> mapPersona;
-
+    private Map<String, Persona> mapPersonaInactivas;
     private Map<String, ArrayList<Cerveza>> mapCerveza;
-
     private TreeMap<Integer, Pedido> mapPedidos;
 
     public TecBeer() {
         this.elementos = new ArrayList<>();
         this.mapPersona = new HashMap<>();
+        this.mapPersonaInactivas = new HashMap<>();
         this.mapCerveza = new HashMap<>();
         this.mapPedidos = new TreeMap<>();
     }
@@ -48,18 +48,13 @@ public class TecBeer <T>{
     }
 
     //region LISTA GENERICA METODS
-    //EN LA CLASE PERSONA LO PODEMOS USAR PARA DAR DE ALTA EL OBJETO Y ACA PARA DARLO DE ALTA EN EL ARRAY
     public void addElementoToArrayList(T nuevElemento){
-        //SE PODRIA HACER ACA VALIDACIONES CON EXCEPCIONES PARA VER QUE TOOO LO QUE SE INGRESO ESTA BIEN
-
         elementos.add(nuevElemento);
     }
 
-    //NO SE SI ESTO SERIA LA BAJA? TENDRIA QUE IMPLEMENTAR LA INTERFAZ ACA TAMBIEN ENTONCES
-    public void deletePersonaInArrayList(T elemento){
-        //ELEGIR ELIMINAR LA PERSONA POR ALGUN ATRIBUTO COMO EL DNI O ALGO DE ESO
-        elementos.remove(elemento);
 
+    public void deletePersonaInArrayList(T elemento){
+        elementos.remove(elemento);
     }
 
     public String listarElementos(){
@@ -78,7 +73,23 @@ public class TecBeer <T>{
     public void addToMapPersona(Persona nuevaPersona){
         mapPersona.put(nuevaPersona.getUsername(), nuevaPersona);
     }
+    public void addToMapPersonaInactiva(Persona nuevaPersona){
+        mapPersonaInactivas.put(nuevaPersona.getUsername(), nuevaPersona);
+    }
 
+    //AGREGO LOS ACTIVOS A UN HASH Y LOS DEMAS A OTRO
+    public void arrayListToMapPersonas(){
+        for(Object objecto: elementos){
+            if(objecto instanceof Persona){
+                Persona persona = (Persona) objecto;
+                if(persona.isActivo() == 1){
+                    addToMapPersona(persona);
+                }else{
+                    addToMapPersonaInactiva(persona);
+                }
+            }
+        }
+    }
     public Persona devolverPersonaPorUserName(String username){
         Persona aux = null;
         for(Map.Entry<String, Persona> entry:mapPersona.entrySet()){
@@ -98,9 +109,22 @@ public class TecBeer <T>{
 
     public void removeToMapPersona(Persona persona) {mapPersona.remove(persona.getUsername());}
 
+    public void removeToMapPersonaInactivo(Persona persona) {mapPersonaInactivas.remove(persona.getUsername());}
+
     public boolean verificarUsuario(String userName) {
         boolean existe = false;
         for(Map.Entry<String, Persona> entry : mapPersona.entrySet()){
+            if(userName.equals(entry.getKey())){
+                existe = true;
+                break;
+            }
+        }
+        return existe;
+    }
+
+    public boolean verificarUsuarioInactivo(String userName) {
+        boolean existe = false;
+        for(Map.Entry<String, Persona> entry : mapPersonaInactivas.entrySet()){
             if(userName.equals(entry.getKey())){
                 existe = true;
                 break;
@@ -124,7 +148,7 @@ public class TecBeer <T>{
         for(Map.Entry<String, Persona> entry : mapPersona.entrySet()){
             if(entry.getValue() instanceof Cliente){
                 Consola.escribir(entry.getValue().toString());
-                Consola.escribir("--------------------------------------------------------------");
+                Consola.escribir("-------------------------------");
             }
 
         }
@@ -201,7 +225,7 @@ public class TecBeer <T>{
             for(Cerveza cerveza : cervezas){
                 Consola.escribir(cerveza.toString());
             }
-            Consola.escribir("--------------------------------------------------------------");
+            Consola.escribir("-------------------------------------");
         }
     }
 
@@ -219,7 +243,6 @@ public class TecBeer <T>{
     }
 
     public void verPorEstilo (String estilo){
-
         for(Map.Entry<String, ArrayList<Cerveza>> entry : mapCerveza.entrySet()){
             String estiloMap = entry.getKey();
             if(estiloMap.equalsIgnoreCase(estilo)){
@@ -236,18 +259,45 @@ public class TecBeer <T>{
         mapPedidos.put(nuevoPedido.getIdPedido(), nuevoPedido);
     }
 
+    public void removeFromMapPedidos(int id) {
+        for(Map.Entry<Integer, Pedido> entry : mapPedidos.entrySet()){
+            if(entry.getKey() == id){
+                mapPedidos.remove(id);
+            }
+        }
+    }
+
     public String verTodosLosPedidos(){
         String lista = "No hay pedidos";
         if(!mapPedidos.isEmpty()){
-            lista = "";
-            for(Map.Entry<Integer, Pedido> entry:mapPedidos.entrySet()){
+            lista ="";
+            for(Map.Entry<Integer, Pedido> entry : mapPedidos.entrySet()){
                 lista+=entry.getValue().toString()+"\n";
             }
         }
         return lista;
-
     }
 
+    public Pedido devolverPedidoPorId(int id){
+        Pedido aux = null;
+        for(Map.Entry<Integer, Pedido> entry : mapPedidos.entrySet()){
+            if(entry.getKey() == id){
+                aux = entry.getValue();
+            }
+        }
+        return aux;
+    }
+
+    public boolean existePedido(int id){
+        for(Map.Entry<Integer, Pedido> entry : mapPedidos.entrySet()){
+            if(entry.getKey() == id){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //MUESTRA LOS PEDIDOS DE UN CLIENTE EN PARTICULAR Y LE SUMA EL COSTO DE TODOS LOS PEDIDOS
     public void verPedidosPorCliente (Cliente cliente){
         double costoTotalPedidos=0.0;
         for(Map.Entry<Integer, Pedido> entry : mapPedidos.entrySet()){
@@ -257,6 +307,21 @@ public class TecBeer <T>{
             }
         }
         System.out.println("Costo total pedidos: "+costoTotalPedidos);
+    }
+
+    //FUNCION PARA LIBERAR SISTEMA DE PARTE DEL ADMIN Y PODER PROBAR EL SISTEMA DE CERO
+    public void liberarSistema(){
+        this.elementos.clear();
+        this.mapPersona.clear();
+        this.mapPedidos.clear();
+        this.mapCerveza.clear();
+        this.mapPersonaInactivas.clear();
+    }
+
+    public void activarSistema(){
+        arrayListToMapCerveza();
+        arrayListToMapPersonas();
+        arrayListToMapPedidos();
     }
 
     public void mapPersonaToJSON(Map<String, Persona> mapPersona) {
@@ -380,6 +445,54 @@ public class TecBeer <T>{
         }
 
         return listaPedidos;
+    }
+
+    public void verArchivoPersonas ()  {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            Map<String, Object> personas = objectMapper.readValue(new File("personas.json"),new TypeReference<Map<String, Object>>() {} );
+
+            for (Map.Entry <String, Object> entry : personas.entrySet()){
+                System.out.println(entry.toString());
+                System.out.println("------------------------------------");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+
+    }
+
+    public void verArchivoPedidos ()  {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            Map<Integer, Object> pedidos = objectMapper.readValue(new File("pedidos.json"),new TypeReference<Map<Integer,Object>>() {} );
+
+            for (Map.Entry <Integer,Object> entry : pedidos.entrySet()){
+                System.out.println(entry.toString());
+                System.out.println("---------------------------------------");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void verArchivoCervezas ()  {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            Map<String, ArrayList<Object>> Cervezas = objectMapper.readValue(new File("productos.json"),new TypeReference<Map<String,ArrayList<Object>>>() {} );
+            for (Map.Entry <String, ArrayList<Object>> entry : Cervezas.entrySet()){
+                System.out.println(entry.toString());
+                System.out.println("----------------------------------");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
 

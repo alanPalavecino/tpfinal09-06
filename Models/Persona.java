@@ -11,7 +11,6 @@ import static Models.Consola.sc;
 
 public abstract class Persona implements Serializable {
 
-    // agregue algunos parametros
     private static int cont = 0;
     private int id;
     private String nombre;
@@ -20,15 +19,13 @@ public abstract class Persona implements Serializable {
     private String password;
     private String email;
     private char genero;
-
-
-
     private int rol;
     private int activo;
 
     public Persona() {
         cont++;
         this.id = cont;
+        this.activo = 1;
     }
 
     public Persona(String nombre, String apellido, String username, String password, String email, char genero, int rol) {
@@ -95,9 +92,11 @@ public abstract class Persona implements Serializable {
     public int getRol() {
         return rol;
     }
+
     public void setRol(int rol) {
         this.rol = rol;
     }
+
     public char getGenero() {
         return genero;
     }

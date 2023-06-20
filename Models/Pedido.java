@@ -18,7 +18,7 @@ public class Pedido implements iABM {
     private int idPedido;
     private String fecha;
     private Cliente cliente;
-    private ArrayList<Cerveza> cervezas; //No pusimos un atributo id para producto porque ya lo tenemos en el array con cada uno.
+    private ArrayList<Cerveza> cervezas;
     private double costoPedido;
 
     public Pedido(Cliente cliente) {
@@ -151,7 +151,12 @@ public class Pedido implements iABM {
         }while (opcion == 'S');
 
     }
-    public void baja(TecBeer sistema, Object objeto){};
+    public void baja(TecBeer sistema, Object objeto){
+        if(objeto instanceof Pedido){
+            Pedido aux = (Pedido) objeto;
+            sistema.removeFromMapPedidos(aux.getIdPedido());
+        }
+    }
     public void modificacion(TecBeer sistema){};
 
 
