@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
-    public static void main(String[] args) throws IOException, Invalido {
+    public static void main(String[] args) {
 
 
         TecBeer sistema = new TecBeer();
@@ -48,13 +48,6 @@ public class Main {
         for(Pedido pedido : listaPedidos){
             sistema.addElementoToArrayList(pedido);
         }
-
-        /*System.out.println(sistema.listarElementos());
-
-        sistema.activarSistema();
-        System.out.println(sistema.verTodosLosPedidos());
-
-        System.out.println(sistema.ultimoIdMapPedidos());*/
 
         Menu.menuGeneral(sistema);
     }

@@ -11,8 +11,7 @@ import static Models.Consola.sc;
 
 public abstract class Persona implements Serializable {
 
-    //private static int cont = 0;
-    //private int id;
+
     private String nombre;
     private String apellido;
     private String username;
@@ -23,13 +22,9 @@ public abstract class Persona implements Serializable {
     private int activo;
 
     public Persona() {
-        //cont++;
-        //this.id = cont;
     }
 
     public Persona(String nombre, String apellido, String username, String password, String email, char genero, int rol, int activo) {
-        //cont++;
-        //this.id = cont;
         this.nombre = nombre;
         this.apellido = apellido;
         this.username = username;
@@ -40,9 +35,6 @@ public abstract class Persona implements Serializable {
         this.activo = activo;
     }
 
-    /*public int getId() {
-        return id;
-    }*/
 
     public String getNombre() {
         return nombre;
@@ -112,7 +104,6 @@ public abstract class Persona implements Serializable {
     @Override
     public String toString() {
         return "Persona{" +
-                //"\nid='"+id+'\''+
                 "\nnombre='" + nombre + '\'' +
                 ", \napellido='" + apellido + '\'' +
                 ", \nusername='" + username + '\'' +
@@ -123,20 +114,6 @@ public abstract class Persona implements Serializable {
                 ", \nactivo=" + activo +
                 '}';
     }
-
-    /*@Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Persona)) return false;
-        Persona persona = (Persona) o;
-        return id == persona.id && Objects.equals(username, persona.username);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, username);
-    }*/
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

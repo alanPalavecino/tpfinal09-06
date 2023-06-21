@@ -88,10 +88,12 @@ public class Cliente extends Persona implements iABM {
     public void baja(TecBeer sistema, Object objeto) {
         try {
             sistema.removeToMapPersona((Persona) objeto);
+            ((Persona) objeto).setActivo(0);
+            sistema.addToMapPersonaInactiva((Persona) objeto);
             if(!sistema.verificarUsuario(((Persona) objeto).getUsername())){
                 Consola.escribir("Ha sido dado de baja de Tecbeer.");
             }else throw new Invalido("Error inesperado. No se pudo dar de baja del sistema.");
-        }catch (Exception e){
+        }catch (Invalido e){
             Consola.escribir(e.getMessage());
         }
     }

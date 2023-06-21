@@ -91,7 +91,7 @@ public class Admin extends Persona implements iABM {
             if(!sistema.verificarUsuario(((Persona) objeto).getUsername())){
                 Consola.escribir("Ha sido dado de baja de Tecbeer.");
             }else throw new Invalido("Error inesperado. No se pudo dar de baja del sistema.");
-        }catch (Exception e){
+        }catch (Invalido e){
             Consola.escribir(e.getMessage());
         }
     }

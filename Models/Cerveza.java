@@ -93,6 +93,10 @@ public class Cerveza implements iABM{
         this.activo = activo;
     }
 
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
     @Override
     public String toString() {
         return "Cerveza{" +
@@ -137,10 +141,13 @@ public class Cerveza implements iABM{
             Estilos estilo = Estilos.obtenerEstilo(estiloElegido);
             setEstilo(estilo);
         }
-        Consola.escribir("Ingrese la Marca del producto: ");
-        sc.nextLine();
-        String marca = sc.nextLine();
+        Consola.limpiar();
+        String marca = Consola.leerString("Ingrese la Marca del producto: ");
         setMarca(marca);
+
+        /*sc.nextLine();
+        String marca = sc.nextLine();
+        setMarca(marca);*/
 
         Consola.escribir("Seleccione el Tipo de producto: ");
         int opcionTipo = 1;
@@ -165,14 +172,15 @@ public class Cerveza implements iABM{
         }
 
         try {
-            Consola.escribir("Ingrese el Stock disponible: ");
-            setStock(sc.nextInt());
-            sc.nextLine();
+            Consola.limpiar();
+            int stock = Consola.leerInt("Ingrese el Stock disponible: ");
+            setStock(stock);
         }catch (InputMismatchException e){
             Consola.escribir("Error. Debe ingresar el stock en números enteros.");
             Consola.escribir("Ingrese el Stock disponible: ");
             setStock(sc.nextInt());
         }
+        precio = 50 * tipo.getLitros();
         activo = 1;
     }
 

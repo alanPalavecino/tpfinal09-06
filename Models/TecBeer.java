@@ -176,25 +176,6 @@ public class TecBeer <T>{
     }
 
 
-    //ESTA FUNCION ESTA DE MAS YA VENIAMOS USANDO OTRA
-    /*public void arrayListToMapPersona(){
-        for(Object objeto : elementos){
-            if(objeto instanceof Persona){
-                Persona persona = (Persona) objeto;
-
-                try {
-                    if(!mapPersona.containsKey(persona.getUsername())){
-                        mapPersona.put(persona.getUsername(), persona);
-                    }else {
-                        throw new Invalido("La persona ya existe en el sistema");
-                    }
-                }catch (Invalido e){
-                    Consola.escribir(e.getMessage());
-                }
-            }
-        }
-    }*/
-
     public void arrayListToMapCerveza(){
         for(Object objeto : elementos){
             if(objeto instanceof Cerveza){

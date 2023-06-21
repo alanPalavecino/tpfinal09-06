@@ -308,7 +308,6 @@ public class Menu {
                             aux.setActivo(0);
                             sistema.removeToMapPersona(sistema.devolverPersonaPorUserName(username));
                             sistema.addToMapPersonaInactiva(aux);
-
                             Consola.escribir("LA BAJA HA SIDO EXITOSA");
                             Consola.escribir("Presione cualquier tecla para continuar<>");
                             sc.nextLine();
