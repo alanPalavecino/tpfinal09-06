@@ -1,0 +1,74 @@
+{
+  "1101" : {
+    "idPedido" : 1101,
+    "fecha" : "20-06-2023 12:24:23",
+    "cliente" : {
+      "nombre" : "Nazareno",
+      "apellido" : "Pisoni",
+      "username" : "Naza1991",
+      "password" : "NazaPisoni91!!",
+      "email" : "nazareno_pisoni@hotmail.com",
+      "genero" : "M",
+      "rol" : 0
+    },
+    "cervezas" : [ {
+      "id" : 34,
+      "nombre" : "Citra a Ciegas",
+      "estilo" : "ENGLAND_PALE_ALE",
+      "marca" : "Strange Brewing",
+      "tipo" : "LATA",
+      "precio" : 25.0,
+      "stock" : 295,
+      "activo" : 1
+    } ],
+    "costoPedido" : 125.0
+  },
+  "1102" : {
+    "idPedido" : 1102,
+    "fecha" : "20-06-2023 12:24:59",
+    "cliente" : {
+      "nombre" : "Nazareno",
+      "apellido" : "Pisoni",
+      "username" : "Naza1991",
+      "password" : "NazaPisoni91!!",
+      "email" : "nazareno_pisoni@hotmail.com",
+      "genero" : "M",
+      "rol" : 0
+    },
+    "cervezas" : [ {
+      "id" : 28,
+      "nombre" : "Triple Neipa",
+      "estilo" : "NEW_ENGLAND_PALE_ALE",
+      "marca" : "Sir Hopper",
+      "tipo" : "BARRIL_50",
+      "precio" : 2500.0,
+      "stock" : 295,
+      "activo" : 1
+    } ],
+    "costoPedido" : 12500.0
+  },
+  "1103" : {
+    "idPedido" : 1103,
+    "fecha" : "20-06-2023 17:10:04",
+    "cliente" : {
+      "nombre" : "Nazareno",
+      "apellido" : "Pisoni",
+      "username" : "Naza1991",
+      "password" : "NazaPisoni91!!",
+      "email" : "nazareno_pisoni@hotmail.com",
+      "genero" : "M",
+      "rol" : 0
+    },
+    "cervezas" : [ {
+      "id" : 34,
+      "nombre" : "Citra a Ciegas",
+      "estilo" : "ENGLAND_PALE_ALE",
+      "marca" : "Strange Brewing",
+      "tipo" : "LATA",
+      "precio" : 25.0,
+      "stock" : 290,
+      "activo" : 1
+    } ],
+    "costoPedido" : 250.0
+  }
+}

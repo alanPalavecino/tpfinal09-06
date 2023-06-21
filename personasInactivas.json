@@ -1,0 +1,11 @@
+{
+  "pepe" : {
+    "nombre" : "Pedro",
+    "apellido" : "Perez",
+    "username" : "pepe",
+    "password" : "pepe123",
+    "email" : "pepe@gmail.com",
+    "genero" : "M",
+    "rol" : 0
+  }
+}
